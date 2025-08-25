@@ -1,0 +1,886 @@
+{
+  "races": [
+    {
+      "start": "21.01",
+      "end": "26.01",
+      "name": "Santos Tour Down Under",
+      "type": 2,
+      "level": "UWT",
+      "country": "Australia",
+      "id": "8f8ad8c2-8a3e-40bb-a6ad-05055c0f4911"
+    },
+    {
+      "start": "02.02",
+      "end": null,
+      "name": "Cadel Evans Great Ocean Road Race - Men",
+      "type": 1,
+      "level": "UWT",
+      "country": "Australia",
+      "id": "89e82407-5310-4b58-9c3b-87b1b286bae6"
+    },
+    {
+      "start": "17.02",
+      "end": "23.02",
+      "name": "UAE Tour",
+      "type": 2,
+      "level": "UWT",
+      "country": "United Arab Emirates",
+      "id": "8c0a15b4-3bdd-4618-9837-3df3bf78b9b9"
+    },
+    {
+      "start": "01.03",
+      "end": null,
+      "name": "Omloop Nieuwsblad ME",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium",
+      "id": "18f35a72-09bc-48ae-b528-408163079be3"
+    },
+    {
+      "start": "08.03",
+      "end": null,
+      "name": "Strade Bianche",
+      "type": 1,
+      "level": "UWT",
+      "country": "Italy",
+      "id": "c7bf1516-7450-406b-bd78-aa20a364b93c"
+    },
+    {
+      "start": "09.03",
+      "end": "16.03",
+      "name": "Paris-Nice",
+      "type": 2,
+      "level": "UWT",
+      "country": "France",
+      "id": "a95e77d0-aaba-4af9-9c78-fd41fae45bdc"
+    },
+    {
+      "start": "10.03",
+      "end": "16.03",
+      "name": "Tirreno-Adriatico",
+      "type": 2,
+      "level": "UWT",
+      "country": "Italy",
+      "id": "643e175c-ea8f-47dc-8851-1e8de3c35ca7"
+    },
+    {
+      "start": "22.03",
+      "end": null,
+      "name": "Milano-Sanremo",
+      "type": 1,
+      "level": "UWT",
+      "country": "Italy",
+      "id": "22190366-e2fa-4a06-be9f-24c853fa9269"
+    },
+    {
+      "start": "24.03",
+      "end": "30.03",
+      "name": "Volta Ciclista a Catalunya",
+      "type": 2,
+      "level": "UWT",
+      "country": "Spain",
+      "id": "8233c9c3-2045-4e68-93b1-0cc6b321eb6e"
+    },
+    {
+      "start": "26.03",
+      "end": null,
+      "name": "Classic Brugge-De Panne ME",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium",
+      "id": "30e1b9e0-c2fe-4b3a-8312-c1d3c7139f43"
+    },
+    {
+      "start": "28.03",
+      "end": null,
+      "name": "E3 Saxo Classic ME",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium",
+      "id": "bd321f38-3fdd-4aba-93d4-ebe1df146e3c"
+    },
+    {
+      "start": "30.03",
+      "end": null,
+      "name": "Gent-Wevelgem in Flanders Fields ME",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium",
+      "id": "c96175c1-abcc-47af-bbd6-5bf65ced076c"
+    },
+    {
+      "start": "02.04",
+      "end": null,
+      "name": "Dwars door Vlaanderen - A travers la Flandre ME",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium",
+      "id": "bc39c463-d720-4bf9-a049-6aceacd2c48f"
+    },
+    {
+      "start": "06.04",
+      "end": null,
+      "name": "Ronde van Vlaanderen - Tour des Flandres ME",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium",
+      "id": "cadc3364-f9b4-4c13-b319-199e411a6ceb"
+    },
+    {
+      "start": "07.04",
+      "end": "12.04",
+      "name": "Itzulia Basque Country",
+      "type": 2,
+      "level": "UWT",
+      "country": "Spain",
+      "id": "c95b6d49-43b5-44bf-bd34-8be93ef593b6"
+    },
+    {
+      "start": "13.04",
+      "end": null,
+      "name": "Paris-Roubaix",
+      "type": 1,
+      "level": "UWT",
+      "country": "France",
+      "id": "c1d6ae70-0c94-479e-b560-53921c23a8d3"
+    },
+    {
+      "start": "20.04",
+      "end": null,
+      "name": "Amstel Gold Race",
+      "type": 1,
+      "level": "UWT",
+      "country": "Netherlands",
+      "id": "5962a4db-ea44-4bc2-9904-79d168601ed3"
+    },
+    {
+      "start": "23.04",
+      "end": null,
+      "name": "La Flèche Wallonne",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium",
+      "id": "776635e1-bb17-40d0-a3f2-405ec33d50d4"
+    },
+    {
+      "start": "27.04",
+      "end": null,
+      "name": "Liège-Bastogne-Liège",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium",
+      "id": "64620515-d656-420d-8216-64224919d667"
+    },
+    {
+      "start": "29.04",
+      "end": "04.05",
+      "name": "Tour de Romandie",
+      "type": 2,
+      "level": "UWT",
+      "country": "Switzerland",
+      "id": "9a97f810-691b-497d-81f9-3cce18d2c7d8"
+    },
+    {
+      "start": "01.05",
+      "end": null,
+      "name": "Eschborn-Frankfurt",
+      "type": 1,
+      "level": "UWT",
+      "country": "Germany",
+      "id": "d74b7f1b-80d8-4ff3-9ba8-47da1abc01c7"
+    },
+    {
+      "start": "09.05",
+      "end": "01.06",
+      "name": "Giro d'Italia",
+      "type": 2,
+      "level": "UWT",
+      "country": "Italy",
+      "id": "a857f9dd-c239-4def-b168-2c37b1096f17"
+    },
+    {
+      "start": "08.06",
+      "end": "15.06",
+      "name": "Critérium du Dauphiné",
+      "type": 2,
+      "level": "UWT",
+      "country": "France",
+      "id": "768c307a-9453-4410-aace-4a14d04cd59c"
+    },
+    {
+      "start": "15.06",
+      "end": "22.06",
+      "name": "Tour de Suisse",
+      "type": 2,
+      "level": "UWT",
+      "country": "Switzerland",
+      "id": "1372c6c9-3fad-4bf3-aa9d-c1dbaff76222"
+    },
+    {
+      "start": "22.06",
+      "end": null,
+      "name": "Copenhagen Sprint",
+      "type": 1,
+      "level": "UWT",
+      "country": "Denmark",
+      "id": "d60af2f7-91bc-41cc-bd95-7e35a8c6613e"
+    },
+    {
+      "start": "05.07",
+      "end": "27.07",
+      "name": "Tour de France",
+      "type": 2,
+      "level": "UWT",
+      "country": "France",
+      "id": "76754ca2-9304-4a2a-8ddf-9337065999c1"
+    },
+    {
+      "start": "02.08",
+      "end": null,
+      "name": "Donostia San Sebastian Klasikoa",
+      "type": 1,
+      "level": "UWT",
+      "country": "Spain",
+      "id": "677a4bdb-0c14-4b77-aae8-fc58e47e8d73"
+    },
+    {
+      "start": "04.08",
+      "end": "10.08",
+      "name": "Tour de Pologne",
+      "type": 2,
+      "level": "UWT",
+      "country": "Poland",
+      "id": "8d1665a8-a5f3-4520-a292-c143605a1476"
+    },
+    {
+      "start": "17.08",
+      "end": null,
+      "name": "ADAC Cyclassics",
+      "type": 1,
+      "level": "UWT",
+      "country": "Germany",
+      "id": "1eb06948-838c-40c4-937a-835daa8e35d1"
+    },
+    {
+      "start": "20.08",
+      "end": "24.08",
+      "name": "Renewi Tour",
+      "type": 2,
+      "level": "UWT",
+      "country": "Belgium, Netherlands",
+      "id": "cc713440-0fb9-43c4-a0ef-2cdbe65029a4"
+    },
+    {
+      "start": "23.08",
+      "end": "14.09",
+      "name": "La Vuelta Ciclista a España",
+      "type": 2,
+      "level": "UWT",
+      "country": "Spain",
+      "id": "42f50ae4-b62f-4576-8580-cd5e763164ec"
+    },
+    {
+      "start": "31.08",
+      "end": null,
+      "name": "Bretagne Classic - Ouest-France",
+      "type": 1,
+      "level": "UWT",
+      "country": "France",
+      "id": "c6e34f61-94b8-461f-a72a-ffea4962c223"
+    },
+    {
+      "start": "12.09",
+      "end": null,
+      "name": "Grand Prix Cycliste de Québec",
+      "type": 1,
+      "level": "UWT",
+      "country": "Canada",
+      "id": "3f3e6964-b50d-4547-9324-254eb37fd9dd"
+    },
+    {
+      "start": "14.09",
+      "end": null,
+      "name": "Grand Prix Cycliste de Montréal",
+      "type": 1,
+      "level": "UWT",
+      "country": "Canada",
+      "id": "8422a5d6-3ee0-4995-8c8d-e9060092cbef"
+    },
+    {
+      "start": "11.10",
+      "end": null,
+      "name": "Il Lombardia",
+      "type": 1,
+      "level": "UWT",
+      "country": "Italy",
+      "id": "bfac6b8b-1b51-46fe-9a61-fb6fe7038c93"
+    },
+    {
+      "start": "14.10",
+      "end": "19.10",
+      "name": "Gree-Tour of Guangxi",
+      "type": 2,
+      "level": "UWT",
+      "country": "China",
+      "id": "6dd8a2f7-42a0-4b97-bb2c-250578633ff8"
+    },
+    {
+      "start": "05.02",
+      "end": "09.02",
+      "name": "Volta a la Comunitat Valenciana",
+      "type": 2,
+      "level": "Pro",
+      "country": "Spain",
+      "id": "046a9d91-004b-4c9e-82ee-c9fb0a81be89"
+    },
+    {
+      "start": "08.02",
+      "end": "12.02",
+      "name": "Tour of Oman",
+      "type": 2,
+      "level": "Pro",
+      "country": "Oman",
+      "id": "49ebbfdb-d391-4d8a-8847-a05e2e1dde20"
+    },
+    {
+      "start": "16.02",
+      "end": null,
+      "name": "Clasica de Almeria ME",
+      "type": 1,
+      "level": "Pro",
+      "country": "Spain",
+      "id": "4bd72ffe-ac60-4314-9472-4a7c19097664"
+    },
+    {
+      "start": "16.02",
+      "end": null,
+      "name": "Figueira Champions Classic",
+      "type": 1,
+      "level": "Pro",
+      "country": "Portugal",
+      "id": "786a3311-ba6f-428f-9b49-82b039645eb8"
+    },
+    {
+      "start": "19.02",
+      "end": "23.02",
+      "name": "Volta ao Algarve em Bicicleta",
+      "type": 2,
+      "level": "Pro",
+      "country": "Portugal",
+      "id": "08630626-4129-4cbf-993f-6708d3dd4a3f"
+    },
+    {
+      "start": "19.02",
+      "end": "23.02",
+      "name": "Vuelta a Andalucia Ruta Ciclista Del Sol",
+      "type": 2,
+      "level": "Pro",
+      "country": "Spain",
+      "id": "9710e4e1-66b9-46a3-bf32-2b0c4a2fafc1"
+    },
+    {
+      "start": "01.03",
+      "end": null,
+      "name": "Faun-Ardèche Classic",
+      "type": 1,
+      "level": "Pro",
+      "country": "France",
+      "id": "75b0afad-62f0-45e2-8a89-4ea5b89a31d6"
+    },
+    {
+      "start": "02.03",
+      "end": null,
+      "name": "Faun Drome Classic",
+      "type": 1,
+      "level": "Pro",
+      "country": "France",
+      "id": "cb690560-ca4e-4a7e-8c4b-3a7e778510de"
+    },
+    {
+      "start": "02.03",
+      "end": null,
+      "name": "Kuurne - Brussel - Kuurne",
+      "type": 1,
+      "level": "Pro",
+      "country": "Belgium",
+      "id": "52f4cbaa-79d5-45a8-a4f2-ab95bacba4c6"
+    },
+    {
+      "start": "05.03",
+      "end": null,
+      "name": "Trofeo Laigueglia",
+      "type": 1,
+      "level": "Pro",
+      "country": "Italy",
+      "id": "37fa39d3-e4bc-4b2b-9d6f-f69912f72ff6"
+    },
+    {
+      "start": "19.03",
+      "end": null,
+      "name": "Danilith Nokere Koerse",
+      "type": 1,
+      "level": "Pro",
+      "country": "Belgium",
+      "id": "d3dabdcd-6b11-4b87-916e-07fbe9008e20"
+    },
+    {
+      "start": "19.03",
+      "end": null,
+      "name": "Milano-Torino",
+      "type": 1,
+      "level": "Pro",
+      "country": "Italy",
+      "id": "167f323b-a981-4c93-a413-b344a7b538bc"
+    },
+    {
+      "start": "20.03",
+      "end": null,
+      "name": "Grand Prix de Denain - Porte du Hainaut",
+      "type": 1,
+      "level": "Pro",
+      "country": "France",
+      "id": "57bc3ccc-6a01-453f-8a9a-36ca28a43963"
+    },
+    {
+      "start": "21.03",
+      "end": null,
+      "name": "Bredene Koksijde Classic",
+      "type": 1,
+      "level": "Pro",
+      "country": "Belgium",
+      "id": "e7788e7e-ea0a-4990-9aa7-30f87efa924c"
+    },
+    {
+      "start": "05.04",
+      "end": null,
+      "name": "Gran Premio Miguel Indurain",
+      "type": 1,
+      "level": "Pro",
+      "country": "Spain",
+      "id": "cf4f749e-acc3-4d26-a402-c6d55e031554"
+    },
+    {
+      "start": "07.04",
+      "end": "11.04",
+      "name": "Tour of Hainan",
+      "type": 2,
+      "level": "Pro",
+      "country": "China",
+      "id": "667711f0-e3fd-48e7-b8e9-5b65d04c5f74"
+    },
+    {
+      "start": "09.04",
+      "end": null,
+      "name": "Scheldeprijs ME",
+      "type": 1,
+      "level": "Pro",
+      "country": "Belgium",
+      "id": "6f4c5ac3-51bc-464d-98ee-209de899252b"
+    },
+    {
+      "start": "18.04",
+      "end": null,
+      "name": "De Brabantse Pijl - La Flèche Brabançonne ME",
+      "type": 1,
+      "level": "Pro",
+      "country": "Belgium",
+      "id": "e6ac9a69-b55c-400e-8441-267dcfcbb01f"
+    },
+    {
+      "start": "21.04",
+      "end": "25.04",
+      "name": "Tour of the Alps",
+      "type": 2,
+      "level": "Pro",
+      "country": "Austria/Italy",
+      "id": "229aa2c8-fb8c-4a54-990c-ebe78f0991fd"
+    },
+    {
+      "start": "27.04",
+      "end": "04.05",
+      "name": "Presidential Cycling Tour of Turkiye",
+      "type": 2,
+      "level": "Pro",
+      "country": "Turkey",
+      "id": "226bf316-6e8a-4910-808b-4fcf3324f995"
+    },
+    {
+      "start": "10.05",
+      "end": null,
+      "name": "Grand Prix du Morbihan",
+      "type": 1,
+      "level": "Pro",
+      "country": "France",
+      "id": "69340654-9a09-47cf-8844-c1c9bd407455"
+    },
+    {
+      "start": "11.05",
+      "end": null,
+      "name": "Tro-Bro Léon",
+      "type": 1,
+      "level": "Pro",
+      "country": "France",
+      "id": "4b050aa2-671b-4002-898d-06b391e7840b"
+    },
+    {
+      "start": "13.05",
+      "end": null,
+      "name": "Classique Dunkerque / Grand prix des Hauts de France",
+      "type": 1,
+      "level": "Pro",
+      "country": "France",
+      "id": "2df1976d-f9e5-4840-921b-9e8fa6d0354f"
+    },
+    {
+      "start": "14.05",
+      "end": "18.05",
+      "name": "4 Jours de Dunkerque / Grand Prix des Hauts de France",
+      "type": 2,
+      "level": "Pro",
+      "country": "France",
+      "id": "4e322004-f34e-441d-83b0-993015c9c6ee"
+    },
+    {
+      "start": "14.05",
+      "end": "18.05",
+      "name": "Tour de Hongrie",
+      "type": 2,
+      "level": "Pro",
+      "country": "Hungary",
+      "id": "03f0f3d1-5954-4191-a149-c4175864bccf"
+    },
+    {
+      "start": "29.05",
+      "end": "01.06",
+      "name": "Boucles de la Mayenne - Crédit Mutuel",
+      "type": 2,
+      "level": "Pro",
+      "country": "France",
+      "id": "389cb34b-fb55-4fb3-a1ae-4aa64dba8c1a"
+    },
+    {
+      "start": "29.05",
+      "end": "01.06",
+      "name": "Tour of Norway",
+      "type": 2,
+      "level": "Pro",
+      "country": "Norway",
+      "id": "fd59b2fb-def0-4d37-8d92-d0fd8167967a"
+    },
+    {
+      "start": "04.06",
+      "end": "08.06",
+      "name": "Tour of Slovenia",
+      "type": 2,
+      "level": "Pro",
+      "country": "Slovenia",
+      "id": "9446a6ce-7d52-44e6-8ac4-bee454f57844"
+    },
+    {
+      "start": "08.06",
+      "end": null,
+      "name": "Brussels Cycling Classic",
+      "type": 1,
+      "level": "Pro",
+      "country": "Belgium",
+      "id": "42f31d41-cecb-47f5-9213-5a3f3fba7711"
+    },
+    {
+      "start": "14.06",
+      "end": null,
+      "name": "Duracell Dwars door het Hageland",
+      "type": 1,
+      "level": "Pro",
+      "country": "Belgium",
+      "id": "8e7db8e6-c5a7-49fc-9fd9-2150c7859099"
+    },
+    {
+      "start": "17.06",
+      "end": null,
+      "name": "CIC - Mont Ventoux",
+      "type": 1,
+      "level": "Pro",
+      "country": "France",
+      "id": "048b65de-9808-43be-8a98-f6b77bed1ba0"
+    },
+    {
+      "start": "18.06",
+      "end": "22.06",
+      "name": "Baloise Belgium Tour",
+      "type": 2,
+      "level": "Pro",
+      "country": "Belgium",
+      "id": "a6bc1dd6-afa7-4179-bc7e-497728ec2694"
+    },
+    {
+      "start": "06.07",
+      "end": "13.07",
+      "name": "Tour of Magnificent Qinghai",
+      "type": 2,
+      "level": "Pro",
+      "country": "China",
+      "id": "00b8f51d-3e54-4e6a-b8c1-cdb3d1ef2d3a"
+    },
+    {
+      "start": "26.07",
+      "end": "30.07",
+      "name": "Ethias-Tour de Wallonie",
+      "type": 2,
+      "level": "Pro",
+      "country": "Belgium",
+      "id": "680c7e08-60d6-45a4-982b-564f662c8c8c"
+    },
+    {
+      "start": "05.08",
+      "end": "09.08",
+      "name": "Vuelta a Burgos",
+      "type": 2,
+      "level": "Pro",
+      "country": "Spain",
+      "id": "4972c0d5-4d77-4db0-9f61-a25aea7ec85a"
+    },
+    {
+      "start": "07.08",
+      "end": "10.08",
+      "name": "Arctic Race of Norway",
+      "type": 2,
+      "level": "Pro",
+      "country": "Norway",
+      "id": "a4fecb16-bd51-41e8-9d7c-e5a7f9dee060"
+    },
+    {
+      "start": "12.08",
+      "end": "16.08",
+      "name": "PostNord Tour of Denmark",
+      "type": 2,
+      "level": "Pro",
+      "country": "Denmark",
+      "id": "eddabda5-c74c-4705-bf57-a164f1ae6e1c"
+    },
+    {
+      "start": "15.08",
+      "end": null,
+      "name": "Circuit Franco-Belge",
+      "type": 1,
+      "level": "Pro",
+      "country": "Belgium",
+      "id": "14d983e5-5da9-40b7-8fb6-0df7124ac4c4"
+    },
+    {
+      "start": "20.08",
+      "end": "24.08",
+      "name": "Lidl Deutschland Tour",
+      "type": 2,
+      "level": "Pro",
+      "country": "Germany",
+      "id": "01812546-d9c2-4dba-8bdd-1d261eb58078"
+    },
+    {
+      "start": "02.09",
+      "end": "07.09",
+      "name": "Lloyds Bank Tour of Britain Men",
+      "type": 2,
+      "level": "Pro",
+      "country": "United Kingdom",
+      "id": "30a1591b-bc33-4612-a73b-949c2a82d5a0"
+    },
+    {
+      "start": "06.09",
+      "end": null,
+      "name": "Maryland Cycling Classic",
+      "type": 1,
+      "level": "Pro",
+      "country": "United States",
+      "id": "1b0d60f1-c2ff-40c2-b1fd-cbed3e46d6e7"
+    },
+    {
+      "start": "07.09",
+      "end": null,
+      "name": "GP Industria & Artigianato",
+      "type": 1,
+      "level": "Pro",
+      "country": "Italy",
+      "id": "a7acf5d2-7e2d-436b-8ff5-e1120dbccb38"
+    },
+    {
+      "start": "11.09",
+      "end": null,
+      "name": "Gran Premio città di Peccioli - Coppa Sabatini",
+      "type": 1,
+      "level": "Pro",
+      "country": "Italy",
+      "id": "03b37ad2-673b-461d-9c72-6c7ac8fd5d63"
+    },
+    {
+      "start": "14.09",
+      "end": null,
+      "name": "GP de Fourmies / La Voix du Nord",
+      "type": 1,
+      "level": "Pro",
+      "country": "France",
+      "id": "ecf3c68d-9a0b-460a-bf6c-c2d900f086e9"
+    },
+    {
+      "start": "17.09",
+      "end": null,
+      "name": "Grand Prix de Wallonie",
+      "type": 1,
+      "level": "Pro",
+      "country": "Belgium",
+      "id": "0b7e76dd-99d5-4103-9c09-5e0d19b00587"
+    },
+    {
+      "start": "17.09",
+      "end": "21.09",
+      "name": "Skoda Tour de Luxembourg",
+      "type": 2,
+      "level": "Pro",
+      "country": "Luxembourg",
+      "id": "a9100911-d73c-4b44-9aec-745f598695c4"
+    },
+    {
+      "start": "20.09",
+      "end": null,
+      "name": "SUPER 8 Classic",
+      "type": 1,
+      "level": "Pro",
+      "country": "Belgium",
+      "id": "2ae678e5-50f9-41cc-8fdc-9d46af95630f"
+    },
+    {
+      "start": "28.09",
+      "end": "05.10",
+      "name": "Petronas Le Tour de Langkawi",
+      "type": 2,
+      "level": "Pro",
+      "country": "Malaysia",
+      "id": "39d6baae-4cdc-41bc-8480-c5c3735a216e"
+    },
+    {
+      "start": "03.10",
+      "end": null,
+      "name": "Sparkassen Münsterland Giro",
+      "type": 1,
+      "level": "Pro",
+      "country": "Germany",
+      "id": "2373bfc1-8701-4257-be56-5ba82c139cac"
+    },
+    {
+      "start": "04.10",
+      "end": null,
+      "name": "Giro dell'Emilia",
+      "type": 1,
+      "level": "Pro",
+      "country": "Italy",
+      "id": "d1773d3a-48e5-472d-bc6f-69042b9c3c8c"
+    },
+    {
+      "start": "06.10",
+      "end": null,
+      "name": "Coppa Bernocchi - GP Banco BPM",
+      "type": 1,
+      "level": "Pro",
+      "country": "Italy",
+      "id": "890778a6-300f-4805-a14f-3e7376c3180f"
+    },
+    {
+      "start": "07.10",
+      "end": null,
+      "name": "Tre Valli Varesine",
+      "type": 1,
+      "level": "Pro",
+      "country": "Italy",
+      "id": "36b329aa-4e07-4815-8f6e-4ac81a1122a0"
+    },
+    {
+      "start": "09.10",
+      "end": null,
+      "name": "Gran Piemonte",
+      "type": 1,
+      "level": "Pro",
+      "country": "Italy",
+      "id": "50380ac7-cc2d-4f4a-b0f1-925e165b05a8"
+    },
+    {
+      "start": "09.10",
+      "end": "12.10",
+      "name": "Tour of Taihu Lake",
+      "type": 2,
+      "level": "Pro",
+      "country": "China",
+      "id": "9a154a73-110d-41ee-b44a-e051e62f0ddf"
+    },
+    {
+      "start": "12.10",
+      "end": null,
+      "name": "Paris - Tours Elite",
+      "type": 1,
+      "level": "Pro",
+      "country": "France",
+      "id": "30d2c6b9-411a-4034-8927-429cf811ebc0"
+    },
+    {
+      "start": "15.10",
+      "end": null,
+      "name": "Giro del Veneto",
+      "type": 1,
+      "level": "Pro",
+      "country": "Italy",
+      "id": "5b1bbe0a-aa93-4e36-8f53-1525648a1ae4"
+    },
+    {
+      "start": "19.10",
+      "end": null,
+      "name": "Utsunomiya Japan Cup Road Race",
+      "type": 1,
+      "level": "Pro",
+      "country": "Japan",
+      "id": "5e5d69ad-aee1-409d-8f3b-5129fc6423d7"
+    },
+    {
+      "start": "19.10",
+      "end": null,
+      "name": "Veneto Classic",
+      "type": 1,
+      "level": "Pro",
+      "country": "Italy",
+      "id": "86511c4d-ca45-4aa4-8275-1deb77bb82f2"
+    },
+    {
+      "start": "28.09",
+      "end": null,
+      "name": "World Championships ME - Road Race",
+      "type": 1,
+      "level": "WC",
+      "country": "Rwanda",
+      "id": "a2d42ff1-f41d-4bce-9464-818b04037636"
+    },
+    {
+      "start": "21.09",
+      "end": null,
+      "name": "World Championships ME - ITT",
+      "type": 1,
+      "level": "WC",
+      "country": "Rwanda",
+      "id": "81ddee0f-18e6-41ea-ae83-ccf17afd24fa"
+    },
+    {
+      "start": "05.10",
+      "end": null,
+      "name": "European Continental Championships ME - Road Race",
+      "type": 1,
+      "level": "CC",
+      "country": "France",
+      "id": "ec96a1bf-e6d9-4bcb-9d0a-c17ea1318b76"
+    },
+    {
+      "start": "01.10",
+      "end": null,
+      "name": "European Continental Championships ME - ITT",
+      "type": 1,
+      "level": "CC",
+      "country": "France",
+      "id": "d0803f48-a8e6-442c-891c-8c89be433a5a"
+    }
+  ]
+}

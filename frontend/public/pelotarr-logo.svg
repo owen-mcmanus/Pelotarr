@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Pelotarr logo">
+  <title>Pelotarr</title>
+  <!-- Badge background -->
+  <circle cx="128" cy="128" r="120" fill="#FFCC00"></circle>
+  <!-- Wheel rim -->
+  <circle cx="128" cy="128" r="86" fill="none" stroke="#111111" stroke-width="18"></circle>
+  <!-- Spokes -->
+  <g stroke="#111111" stroke-width="10" stroke-linecap="round">
+    <line x1="54" y1="128" x2="202" y2="128"></line>
+    <line x1="128" y1="54" x2="128" y2="202"></line>
+    <line x1="76" y1="76" x2="180" y2="180"></line>
+    <line x1="180" y1="76" x2="76" y2="180"></line>
+  </g>
+  <!-- Hub -->
+  <circle cx="128" cy="128" r="14" fill="#111111"></circle>
+</svg>

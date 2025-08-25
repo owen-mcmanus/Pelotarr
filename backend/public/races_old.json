@@ -1,0 +1,354 @@
+{
+  "races": [
+    {
+      "start": "21.01",
+      "end": "26.01",
+      "name": "Santos Tour Down Under",
+      "type": 2,
+      "level": "UWT",
+      "country": "Australia"
+    },
+    {
+      "start": "02.02",
+      "end": null,
+      "name": "Cadel Evans Great Ocean Road Race - Men",
+      "type": 1,
+      "level": "UWT",
+      "country": "Australia"
+    },
+    {
+      "start": "17.02",
+      "end": "23.02",
+      "name": "UAE Tour",
+      "type": 2,
+      "level": "UWT",
+      "country": "United Arab Emirates"
+    },
+    {
+      "start": "01.03",
+      "end": null,
+      "name": "Omloop Nieuwsblad ME",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium"
+    },
+    {
+      "start": "08.03",
+      "end": null,
+      "name": "Strade Bianche",
+      "type": 1,
+      "level": "UWT",
+      "country": "Italy"
+    },
+    {
+      "start": "09.03",
+      "end": "16.03",
+      "name": "Paris-Nice",
+      "type": 2,
+      "level": "UWT",
+      "country": "France"
+    },
+    {
+      "start": "10.03",
+      "end": "16.03",
+      "name": "Tirreno-Adriatico",
+      "type": 2,
+      "level": "UWT",
+      "country": "Italy"
+    },
+    {
+      "start": "22.03",
+      "end": null,
+      "name": "Milano-Sanremo",
+      "type": 1,
+      "level": "UWT",
+      "country": "Italy"
+    },
+    {
+      "start": "24.03",
+      "end": "30.03",
+      "name": "Volta Ciclista a Catalunya",
+      "type": 2,
+      "level": "UWT",
+      "country": "Spain"
+    },
+    {
+      "start": "26.03",
+      "end": null,
+      "name": "Classic Brugge-De Panne ME",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium"
+    },
+    {
+      "start": "28.03",
+      "end": null,
+      "name": "E3 Saxo Classic ME",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium"
+    },
+    {
+      "start": "30.03",
+      "end": null,
+      "name": "Gent-Wevelgem in Flanders Fields ME",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium"
+    },
+    {
+      "start": "02.04",
+      "end": null,
+      "name": "Dwars door Vlaanderen - A travers la Flandre ME",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium"
+    },
+    {
+      "start": "06.04",
+      "end": null,
+      "name": "Ronde van Vlaanderen - Tour des Flandres ME",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium"
+    },
+    {
+      "start": "07.04",
+      "end": "12.04",
+      "name": "Itzulia Basque Country",
+      "type": 2,
+      "level": "UWT",
+      "country": "Spain"
+    },
+    {
+      "start": "13.04",
+      "end": null,
+      "name": "Paris-Roubaix",
+      "type": 1,
+      "level": "UWT",
+      "country": "France"
+    },
+    {
+      "start": "20.04",
+      "end": null,
+      "name": "Amstel Gold Race",
+      "type": 1,
+      "level": "UWT",
+      "country": "Netherlands"
+    },
+    {
+      "start": "23.04",
+      "end": null,
+      "name": "La Flèche Wallonne",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium"
+    },
+    {
+      "start": "27.04",
+      "end": null,
+      "name": "Liège-Bastogne-Liège",
+      "type": 1,
+      "level": "UWT",
+      "country": "Belgium"
+    },
+    {
+      "start": "29.04",
+      "end": "04.05",
+      "name": "Tour de Romandie",
+      "type": 2,
+      "level": "UWT",
+      "country": "Switzerland"
+    },
+    {
+      "start": "01.05",
+      "end": null,
+      "name": "Eschborn-Frankfurt",
+      "type": 1,
+      "level": "UWT",
+      "country": "Germany"
+    },
+    {
+      "start": "09.05",
+      "end": "01.06",
+      "name": "Giro d'Italia",
+      "type": 2,
+      "level": "UWT",
+      "country": "Italy"
+    },
+    {
+      "start": "08.06",
+      "end": "15.06",
+      "name": "Critérium du Dauphiné",
+      "type": 2,
+      "level": "UWT",
+      "country": "France"
+    },
+    {
+      "start": "15.06",
+      "end": "22.06",
+      "name": "Tour de Suisse",
+      "type": 2,
+      "level": "UWT",
+      "country": "Switzerland"
+    },
+    {
+      "start": "22.06",
+      "end": null,
+      "name": "Copenhagen Sprint",
+      "type": 1,
+      "level": "UWT",
+      "country": "Denmark"
+    },
+    {
+      "start": "05.07",
+      "end": "27.07",
+      "name": "Tour de France",
+      "type": 2,
+      "level": "UWT",
+      "country": "France"
+    },
+    {
+      "start": "02.08",
+      "end": null,
+      "name": "Donostia San Sebastian Klasikoa",
+      "type": 1,
+      "level": "UWT",
+      "country": "Spain"
+    },
+    {
+      "start": "04.08",
+      "end": "10.08",
+      "name": "Tour de Pologne",
+      "type": 2,
+      "level": "UWT",
+      "country": "Poland"
+    },
+    {
+      "start": "17.08",
+      "end": null,
+      "name": "ADAC Cyclassics",
+      "type": 1,
+      "level": "UWT",
+      "country": "Germany"
+    },
+    {
+      "start": "20.08",
+      "end": "24.08",
+      "name": "Renewi Tour",
+      "type": 2,
+      "level": "UWT",
+      "country": "Belgium, Netherlands"
+    },
+    {
+      "start": "23.08",
+      "end": "14.09",
+      "name": "La Vuelta Ciclista a España",
+      "type": 2,
+      "level": "UWT",
+      "country": "Spain"
+    },
+    {
+      "start": "31.08",
+      "end": null,
+      "name": "Bretagne Classic - Ouest-France",
+      "type": 1,
+      "level": "UWT",
+      "country": "France"
+    },
+    {
+      "start": "12.09",
+      "end": null,
+      "name": "Grand Prix Cycliste de Québec",
+      "type": 1,
+      "level": "UWT",
+      "country": "Canada"
+    },
+    {
+      "start": "14.09",
+      "end": null,
+      "name": "Grand Prix Cycliste de Montréal",
+      "type": 1,
+      "level": "UWT",
+      "country": "Canada"
+    },
+    {
+      "start": "11.10",
+      "end": null,
+      "name": "Il Lombardia",
+      "type": 1,
+      "level": "UWT",
+      "country": "Italy"
+    },
+    {
+      "start": "14.10",
+      "end": "19.10",
+      "name": "Gree-Tour of Guangxi",
+      "type": 2,
+      "level": "UWT",
+      "country": "China"
+    },
+    { "start": "05.02", "end": "09.02", "name": "Volta a la Comunitat Valenciana", "type": 2, "level": "Pro", "country": "Spain" },
+    { "start": "08.02", "end": "12.02", "name": "Tour of Oman", "type": 2, "level": "Pro", "country": "Oman" },
+    { "start": "16.02", "end": null, "name": "Clasica de Almeria ME", "type": 1, "level": "Pro", "country": "Spain" },
+    { "start": "16.02", "end": null, "name": "Figueira Champions Classic", "type": 1, "level": "Pro", "country": "Portugal" },
+    { "start": "19.02", "end": "23.02", "name": "Volta ao Algarve em Bicicleta", "type": 2, "level": "Pro", "country": "Portugal" },
+    { "start": "19.02", "end": "23.02", "name": "Vuelta a Andalucia Ruta Ciclista Del Sol", "type": 2, "level": "Pro", "country": "Spain" },
+    { "start": "01.03", "end": null, "name": "Faun-Ardèche Classic", "type": 1, "level": "Pro", "country": "France" },
+    { "start": "02.03", "end": null, "name": "Faun Drome Classic", "type": 1, "level": "Pro", "country": "France" },
+    { "start": "02.03", "end": null, "name": "Kuurne - Brussel - Kuurne", "type": 1, "level": "Pro", "country": "Belgium" },
+    { "start": "05.03", "end": null, "name": "Trofeo Laigueglia", "type": 1, "level": "Pro", "country": "Italy" },
+    { "start": "19.03", "end": null, "name": "Danilith Nokere Koerse", "type": 1, "level": "Pro", "country": "Belgium" },
+    { "start": "19.03", "end": null, "name": "Milano - Torino", "type": 1, "level": "Pro", "country": "Italy" },
+    { "start": "20.03", "end": null, "name": "Grand Prix de Denain - Porte du Hainaut", "type": 1, "level": "Pro", "country": "France" },
+    { "start": "21.03", "end": null, "name": "Bredene Koksijde Classic", "type": 1, "level": "Pro", "country": "Belgium" },
+    { "start": "05.04", "end": null, "name": "Gran Premio Miguel Indurain", "type": 1, "level": "Pro", "country": "Spain" },
+    { "start": "07.04", "end": "11.04", "name": "Tour of Hainan", "type": 2, "level": "Pro", "country": "China" },
+    { "start": "09.04", "end": null, "name": "Scheldeprijs ME", "type": 1, "level": "Pro", "country": "Belgium" },
+    { "start": "18.04", "end": null, "name": "De Brabantse Pijl - La Flèche Brabançonne ME", "type": 1, "level": "Pro", "country": "Belgium" },
+    { "start": "21.04", "end": "25.04", "name": "Tour of the Alps", "type": 2, "level": "Pro", "country": "Austria/Italy" },
+    { "start": "27.04", "end": "04.05", "name": "Presidential Cycling Tour of Turkiye", "type": 2, "level": "Pro", "country": "Turkey" },
+    { "start": "10.05", "end": null, "name": "Grand Prix du Morbihan", "type": 1, "level": "Pro", "country": "France" },
+    { "start": "11.05", "end": null, "name": "Tro-Bro Léon", "type": 1, "level": "Pro", "country": "France" },
+    { "start": "13.05", "end": null, "name": "Classique Dunkerque / Grand prix des Hauts de France", "type": 1, "level": "Pro", "country": "France" },
+    { "start": "14.05", "end": "18.05", "name": "4 Jours de Dunkerque / Grand Prix des Hauts de France", "type": 2, "level": "Pro", "country": "France" },
+    { "start": "14.05", "end": "18.05", "name": "Tour de Hongrie", "type": 2, "level": "Pro", "country": "Hungary" },
+    { "start": "29.05", "end": "01.06", "name": "Boucles de la Mayenne - Crédit Mutuel", "type": 2, "level": "Pro", "country": "France" },
+    { "start": "29.05", "end": "01.06", "name": "Tour of Norway", "type": 2, "level": "Pro", "country": "Norway" },
+    { "start": "04.06", "end": "08.06", "name": "Tour of Slovenia", "type": 2, "level": "Pro", "country": "Slovenia" },
+    { "start": "08.06", "end": null, "name": "Brussels Cycling Classic", "type": 1, "level": "Pro", "country": "Belgium" },
+    { "start": "14.06", "end": null, "name": "Duracell Dwars door het Hageland", "type": 1, "level": "Pro", "country": "Belgium" },
+    { "start": "17.06", "end": null, "name": "CIC - Mont Ventoux", "type": 1, "level": "Pro", "country": "France" },
+    { "start": "18.06", "end": "22.06", "name": "Baloise Belgium Tour", "type": 2, "level": "Pro", "country": "Belgium" },
+    { "start": "06.07", "end": "13.07", "name": "Tour of Magnificent Qinghai", "type": 2, "level": "Pro", "country": "China" },
+    { "start": "26.07", "end": "30.07", "name": "Ethias-Tour de Wallonie", "type": 2, "level": "Pro", "country": "Belgium" },
+    { "start": "05.08", "end": "09.08", "name": "Vuelta a Burgos", "type": 2, "level": "Pro", "country": "Spain" },
+    { "start": "07.08", "end": "10.08", "name": "Arctic Race of Norway", "type": 2, "level": "Pro", "country": "Norway" },
+    { "start": "12.08", "end": "16.08", "name": "PostNord Tour of Denmark", "type": 2, "level": "Pro", "country": "Denmark" },
+    { "start": "15.08", "end": null, "name": "Circuit Franco-Belge", "type": 1, "level": "Pro", "country": "Belgium" },
+    { "start": "20.08", "end": "24.08", "name": "Lidl Deutschland Tour", "type": 2, "level": "Pro", "country": "Germany" },
+    { "start": "02.09", "end": "07.09", "name": "Lloyds Bank Tour of Britain Men", "type": 2, "level": "Pro", "country": "United Kingdom" },
+    { "start": "06.09", "end": null, "name": "Maryland Cycling Classic", "type": 1, "level": "Pro", "country": "United States" },
+    { "start": "07.09", "end": null, "name": "GP Industria & Artigianato", "type": 1, "level": "Pro", "country": "Italy" },
+    { "start": "11.09", "end": null, "name": "Gran Premio città di Peccioli - Coppa Sabatini", "type": 1, "level": "Pro", "country": "Italy" },
+    { "start": "14.09", "end": null, "name": "GP de Fourmies / La Voix du Nord", "type": 1, "level": "Pro", "country": "France" },
+    { "start": "17.09", "end": null, "name": "Grand Prix de Wallonie", "type": 1, "level": "Pro", "country": "Belgium" },
+    { "start": "17.09", "end": "21.09", "name": "Skoda Tour de Luxembourg", "type": 2, "level": "Pro", "country": "Luxembourg" },
+    { "start": "20.09", "end": null, "name": "SUPER 8 Classic", "type": 1, "level": "Pro", "country": "Belgium" },
+    { "start": "28.09", "end": "05.10", "name": "Petronas Le Tour de Langkawi", "type": 2, "level": "Pro", "country": "Malaysia" },
+    { "start": "03.10", "end": null, "name": "Sparkassen Münsterland Giro", "type": 1, "level": "Pro", "country": "Germany" },
+    { "start": "04.10", "end": null, "name": "Giro dell'Emilia", "type": 1, "level": "Pro", "country": "Italy" },
+    { "start": "06.10", "end": null, "name": "Coppa Bernocchi - GP Banco BPM", "type": 1, "level": "Pro", "country": "Italy" },
+    { "start": "07.10", "end": null, "name": "Tre Valli Varesine", "type": 1, "level": "Pro", "country": "Italy" },
+    { "start": "09.10", "end": null, "name": "Gran Piemonte", "type": 1, "level": "Pro", "country": "Italy" },
+    { "start": "09.10", "end": "12.10", "name": "Tour of Taihu Lake", "type": 2, "level": "Pro", "country": "China" },
+    { "start": "12.10", "end": null, "name": "Paris - Tours Elite", "type": 1, "level": "Pro", "country": "France" },
+    { "start": "15.10", "end": null, "name": "Giro del Veneto", "type": 1, "level": "Pro", "country": "Italy" },
+    { "start": "19.10", "end": null, "name": "Utsunomiya Japan Cup Road Race", "type": 1, "level": "Pro", "country": "Japan" },
+    { "start": "19.10", "end": null, "name": "Veneto Classic", "type": 1, "level": "Pro", "country": "Italy" },
+    { "start": "28.09", "end": null, "name": "World Championships ME - Road Race", "type": 1, "level": "WC", "country": "Rwanda" },
+    { "start": "21.09", "end": null, "name": "World Championships ME - ITT", "type": 1, "level": "WC", "country": "Rwanda" },
+    { "start": "05.10", "end": null, "name": "European Continental Championships ME - Road Race", "type": 1, "level": "CC", "country": "France" },
+    { "start": "01.10", "end": null, "name": "European Continental Championships ME - ITT", "type": 1, "level": "CC", "country": "France" }
+  ]
+}
