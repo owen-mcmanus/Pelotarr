@@ -19,7 +19,8 @@ type RaceFields = {
     country?: string | null;
 };
 
-const CACHE_FILE = path.join(process.cwd(), "/src/tiz_classics_cache.json"); // adjust if needed
+const CLASSICS_CACHE_FILE = path.join(process.cwd(), "/public/tiz_classics_cache.json"); // adjust if needed
+const STAGE_CACHE_FILE = path.join(process.cwd(), "/public/tiz_stages_cache.json"); // adjust if needed
 
 export function searchForRace(
     race: RaceFields,
@@ -27,29 +28,48 @@ export function searchForRace(
         dayWindow?: number;   // how many days around start_date to allow
         threshold?: number;   // min string similarity (0..1)
     }
-): {
+):{
     title: string;
     content: string;
 }{
     const dayWindow = opts?.dayWindow ?? 0;
     let threshold = opts?.threshold ?? 0.60;
 
-    if (!race.name) return "";
-    const raceDate = toDate(race.end_date ?? race.start_date);
-    if (!raceDate) return "";
+    if (!race.name) return {title:"", content:""};
+    const raceStartDate = toDate( race.start_date);
+    const raceEndDate = toDate(race.end_date);
+    if (!raceStartDate) return {title:"", content:""};
 
-    const cache = loadCacheSafe();
-    if (cache.length === 0) return "";
+    const cache = loadCacheSafe(race.type);
+    if (cache.length === 0) return {title:"", content:""};
 
     // 1) Filter by date window
     const candidates = cache.filter((it) => {
         const d = parseRssDate(it.pubDate);
         if (!d) return false;
-        const diff = Math.abs(daysBetween(d, raceDate));
-        return diff <= dayWindow;
+
+        if (race.type === 1) {
+            const diff = Math.abs(daysBetween(d, raceStartDate));
+            return diff <= dayWindow;
+        } else {
+            const day = (x: Date) => new Date(x.getFullYear(), x.getMonth(), x.getDate());
+            const t = day(d);
+
+            const start = day(raceStartDate);
+            const end = day(raceEndDate ?? raceStartDate);
+
+            const startPad = new Date(start);
+            startPad.setDate(startPad.getDate() - dayWindow);
+
+            const endPad = new Date(end);
+            endPad.setDate(endPad.getDate() + dayWindow);
+
+            return t >= startPad && t <= endPad;
+        }
     });
 
-    if (candidates.length === 0) return "";
+
+    if (candidates.length === 0) return {title:"", content:""};
 
     // 2) Remove obvious 10k/10 km items
     const no15k = candidates.filter((it) => !is15Km(it));
@@ -72,7 +92,7 @@ export function searchForRace(
         if (score > bestScore) {
             bestScore = score;
             bestLink = it.title;
-            bestContent = it["content:encoded"];
+            bestContent = it["content:encoded"] ? it["content:encoded"] : "";
         }
     }
 
@@ -85,10 +105,10 @@ export function searchForRace(
     return bestScore >= threshold ? {title:bestLink, content:bestContent} : {title:"", content:""};
 }
 
-function loadCacheSafe(): CachedItem[] {
+function loadCacheSafe(type:number): CachedItem[] {
     try {
-        if (!fs.existsSync(CACHE_FILE)) return [];
-        const raw = fs.readFileSync(CACHE_FILE, "utf-8");
+        if (!fs.existsSync(type === 1 ? CLASSICS_CACHE_FILE : STAGE_CACHE_FILE)) return [];
+        const raw = fs.readFileSync(type === 1 ? CLASSICS_CACHE_FILE : STAGE_CACHE_FILE, "utf-8");
         const json = JSON.parse(raw);
         return Array.isArray(json) ? (json as CachedItem[]) : [];
     } catch {

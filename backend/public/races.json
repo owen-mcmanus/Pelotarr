@@ -7,7 +7,8 @@
       "type": 2,
       "level": "UWT",
       "country": "Australia",
-      "id": "8f8ad8c2-8a3e-40bb-a6ad-05055c0f4911"
+      "id": "8f8ad8c2-8a3e-40bb-a6ad-05055c0f4911",
+      "stages": 6
     },
     {
       "start": "02.02",
@@ -25,7 +26,8 @@
       "type": 2,
       "level": "UWT",
       "country": "United Arab Emirates",
-      "id": "8c0a15b4-3bdd-4618-9837-3df3bf78b9b9"
+      "id": "8c0a15b4-3bdd-4618-9837-3df3bf78b9b9",
+      "stages": 7
     },
     {
       "start": "01.03",
@@ -52,7 +54,8 @@
       "type": 2,
       "level": "UWT",
       "country": "France",
-      "id": "a95e77d0-aaba-4af9-9c78-fd41fae45bdc"
+      "id": "a95e77d0-aaba-4af9-9c78-fd41fae45bdc",
+      "stages": 8
     },
     {
       "start": "10.03",
@@ -61,7 +64,8 @@
       "type": 2,
       "level": "UWT",
       "country": "Italy",
-      "id": "643e175c-ea8f-47dc-8851-1e8de3c35ca7"
+      "id": "643e175c-ea8f-47dc-8851-1e8de3c35ca7",
+      "stages": 7
     },
     {
       "start": "22.03",
@@ -79,7 +83,8 @@
       "type": 2,
       "level": "UWT",
       "country": "Spain",
-      "id": "8233c9c3-2045-4e68-93b1-0cc6b321eb6e"
+      "id": "8233c9c3-2045-4e68-93b1-0cc6b321eb6e",
+      "stages": 7
     },
     {
       "start": "26.03",
@@ -133,7 +138,8 @@
       "type": 2,
       "level": "UWT",
       "country": "Spain",
-      "id": "c95b6d49-43b5-44bf-bd34-8be93ef593b6"
+      "id": "c95b6d49-43b5-44bf-bd34-8be93ef593b6",
+      "stages": 6
     },
     {
       "start": "13.04",
@@ -178,7 +184,8 @@
       "type": 2,
       "level": "UWT",
       "country": "Switzerland",
-      "id": "9a97f810-691b-497d-81f9-3cce18d2c7d8"
+      "id": "9a97f810-691b-497d-81f9-3cce18d2c7d8",
+      "stages": 5
     },
     {
       "start": "01.05",
@@ -196,7 +203,8 @@
       "type": 2,
       "level": "UWT",
       "country": "Italy",
-      "id": "a857f9dd-c239-4def-b168-2c37b1096f17"
+      "id": "a857f9dd-c239-4def-b168-2c37b1096f17",
+      "stages": 21
     },
     {
       "start": "08.06",
@@ -205,7 +213,8 @@
       "type": 2,
       "level": "UWT",
       "country": "France",
-      "id": "768c307a-9453-4410-aace-4a14d04cd59c"
+      "id": "768c307a-9453-4410-aace-4a14d04cd59c",
+      "stages": 8
     },
     {
       "start": "15.06",
@@ -214,7 +223,8 @@
       "type": 2,
       "level": "UWT",
       "country": "Switzerland",
-      "id": "1372c6c9-3fad-4bf3-aa9d-c1dbaff76222"
+      "id": "1372c6c9-3fad-4bf3-aa9d-c1dbaff76222",
+      "stages": 8
     },
     {
       "start": "22.06",
@@ -232,7 +242,8 @@
       "type": 2,
       "level": "UWT",
       "country": "France",
-      "id": "76754ca2-9304-4a2a-8ddf-9337065999c1"
+      "id": "76754ca2-9304-4a2a-8ddf-9337065999c1",
+      "stages": 21
     },
     {
       "start": "02.08",
@@ -250,7 +261,8 @@
       "type": 2,
       "level": "UWT",
       "country": "Poland",
-      "id": "8d1665a8-a5f3-4520-a292-c143605a1476"
+      "id": "8d1665a8-a5f3-4520-a292-c143605a1476",
+      "stages": 7
     },
     {
       "start": "17.08",
@@ -268,7 +280,8 @@
       "type": 2,
       "level": "UWT",
       "country": "Belgium, Netherlands",
-      "id": "cc713440-0fb9-43c4-a0ef-2cdbe65029a4"
+      "id": "cc713440-0fb9-43c4-a0ef-2cdbe65029a4",
+      "stages": 5
     },
     {
       "start": "23.08",
@@ -277,7 +290,8 @@
       "type": 2,
       "level": "UWT",
       "country": "Spain",
-      "id": "42f50ae4-b62f-4576-8580-cd5e763164ec"
+      "id": "42f50ae4-b62f-4576-8580-cd5e763164ec",
+      "stages": 21
     },
     {
       "start": "31.08",
@@ -322,7 +336,8 @@
       "type": 2,
       "level": "UWT",
       "country": "China",
-      "id": "6dd8a2f7-42a0-4b97-bb2c-250578633ff8"
+      "id": "6dd8a2f7-42a0-4b97-bb2c-250578633ff8",
+      "stages": 6
     },
     {
       "start": "05.02",
@@ -331,7 +346,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Spain",
-      "id": "046a9d91-004b-4c9e-82ee-c9fb0a81be89"
+      "id": "046a9d91-004b-4c9e-82ee-c9fb0a81be89",
+      "stages": 5
     },
     {
       "start": "08.02",
@@ -340,7 +356,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Oman",
-      "id": "49ebbfdb-d391-4d8a-8847-a05e2e1dde20"
+      "id": "49ebbfdb-d391-4d8a-8847-a05e2e1dde20",
+      "stages": 5
     },
     {
       "start": "16.02",
@@ -367,7 +384,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Portugal",
-      "id": "08630626-4129-4cbf-993f-6708d3dd4a3f"
+      "id": "08630626-4129-4cbf-993f-6708d3dd4a3f",
+      "stages": 5
     },
     {
       "start": "19.02",
@@ -376,7 +394,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Spain",
-      "id": "9710e4e1-66b9-46a3-bf32-2b0c4a2fafc1"
+      "id": "9710e4e1-66b9-46a3-bf32-2b0c4a2fafc1",
+      "stages": 5
     },
     {
       "start": "01.03",
@@ -466,7 +485,8 @@
       "type": 2,
       "level": "Pro",
       "country": "China",
-      "id": "667711f0-e3fd-48e7-b8e9-5b65d04c5f74"
+      "id": "667711f0-e3fd-48e7-b8e9-5b65d04c5f74",
+      "stages": 5
     },
     {
       "start": "09.04",
@@ -493,7 +513,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Austria/Italy",
-      "id": "229aa2c8-fb8c-4a54-990c-ebe78f0991fd"
+      "id": "229aa2c8-fb8c-4a54-990c-ebe78f0991fd",
+      "stages": 5
     },
     {
       "start": "27.04",
@@ -502,7 +523,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Turkey",
-      "id": "226bf316-6e8a-4910-808b-4fcf3324f995"
+      "id": "226bf316-6e8a-4910-808b-4fcf3324f995",
+      "stages": 8
     },
     {
       "start": "10.05",
@@ -538,7 +560,8 @@
       "type": 2,
       "level": "Pro",
       "country": "France",
-      "id": "4e322004-f34e-441d-83b0-993015c9c6ee"
+      "id": "4e322004-f34e-441d-83b0-993015c9c6ee",
+      "stages": 5
     },
     {
       "start": "14.05",
@@ -547,7 +570,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Hungary",
-      "id": "03f0f3d1-5954-4191-a149-c4175864bccf"
+      "id": "03f0f3d1-5954-4191-a149-c4175864bccf",
+      "stages": 5
     },
     {
       "start": "29.05",
@@ -556,7 +580,8 @@
       "type": 2,
       "level": "Pro",
       "country": "France",
-      "id": "389cb34b-fb55-4fb3-a1ae-4aa64dba8c1a"
+      "id": "389cb34b-fb55-4fb3-a1ae-4aa64dba8c1a",
+      "stages": 3
     },
     {
       "start": "29.05",
@@ -565,7 +590,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Norway",
-      "id": "fd59b2fb-def0-4d37-8d92-d0fd8167967a"
+      "id": "fd59b2fb-def0-4d37-8d92-d0fd8167967a",
+      "stages": 4
     },
     {
       "start": "04.06",
@@ -574,7 +600,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Slovenia",
-      "id": "9446a6ce-7d52-44e6-8ac4-bee454f57844"
+      "id": "9446a6ce-7d52-44e6-8ac4-bee454f57844",
+      "stages": 5
     },
     {
       "start": "08.06",
@@ -610,7 +637,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Belgium",
-      "id": "a6bc1dd6-afa7-4179-bc7e-497728ec2694"
+      "id": "a6bc1dd6-afa7-4179-bc7e-497728ec2694",
+      "stages": 5
     },
     {
       "start": "06.07",
@@ -619,7 +647,8 @@
       "type": 2,
       "level": "Pro",
       "country": "China",
-      "id": "00b8f51d-3e54-4e6a-b8c1-cdb3d1ef2d3a"
+      "id": "00b8f51d-3e54-4e6a-b8c1-cdb3d1ef2d3a",
+      "stages": 8
     },
     {
       "start": "26.07",
@@ -628,7 +657,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Belgium",
-      "id": "680c7e08-60d6-45a4-982b-564f662c8c8c"
+      "id": "680c7e08-60d6-45a4-982b-564f662c8c8c",
+      "stages": 5
     },
     {
       "start": "05.08",
@@ -637,7 +667,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Spain",
-      "id": "4972c0d5-4d77-4db0-9f61-a25aea7ec85a"
+      "id": "4972c0d5-4d77-4db0-9f61-a25aea7ec85a",
+      "stages": 5
     },
     {
       "start": "07.08",
@@ -646,7 +677,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Norway",
-      "id": "a4fecb16-bd51-41e8-9d7c-e5a7f9dee060"
+      "id": "a4fecb16-bd51-41e8-9d7c-e5a7f9dee060",
+      "stages": 4
     },
     {
       "start": "12.08",
@@ -655,7 +687,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Denmark",
-      "id": "eddabda5-c74c-4705-bf57-a164f1ae6e1c"
+      "id": "eddabda5-c74c-4705-bf57-a164f1ae6e1c",
+      "stages": 5
     },
     {
       "start": "15.08",
@@ -673,7 +706,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Germany",
-      "id": "01812546-d9c2-4dba-8bdd-1d261eb58078"
+      "id": "01812546-d9c2-4dba-8bdd-1d261eb58078",
+      "stages": 4
     },
     {
       "start": "02.09",
@@ -682,7 +716,8 @@
       "type": 2,
       "level": "Pro",
       "country": "United Kingdom",
-      "id": "30a1591b-bc33-4612-a73b-949c2a82d5a0"
+      "id": "30a1591b-bc33-4612-a73b-949c2a82d5a0",
+      "stages": 6
     },
     {
       "start": "06.09",
@@ -736,7 +771,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Luxembourg",
-      "id": "a9100911-d73c-4b44-9aec-745f598695c4"
+      "id": "a9100911-d73c-4b44-9aec-745f598695c4",
+      "stages": 5
     },
     {
       "start": "20.09",
@@ -754,7 +790,8 @@
       "type": 2,
       "level": "Pro",
       "country": "Malaysia",
-      "id": "39d6baae-4cdc-41bc-8480-c5c3735a216e"
+      "id": "39d6baae-4cdc-41bc-8480-c5c3735a216e",
+      "stages": 8
     },
     {
       "start": "03.10",
@@ -808,7 +845,8 @@
       "type": 2,
       "level": "Pro",
       "country": "China",
-      "id": "9a154a73-110d-41ee-b44a-e051e62f0ddf"
+      "id": "9a154a73-110d-41ee-b44a-e051e62f0ddf",
+      "stages": 4
     },
     {
       "start": "12.10",

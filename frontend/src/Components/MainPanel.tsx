@@ -1,15 +1,8 @@
 import { useEffect, useState } from "react";
-import MonitorCheckbox from "./MonitorCheckbox.tsx";
+import MonitorCheckbox from "./Main/MonitorCheckbox.tsx";
+import TableRow from "./Main/TableRow.tsx";
+import type {Race} from "../types.ts";
 
-type Race = {
-    start: string;
-    end: string | null;
-    name: string;
-    type: number;
-    level: string;
-    country: string;
-    id: string;
-};
 
 const YELLOW = "#FFCC00";
 
@@ -18,11 +11,6 @@ const startKey = (dm: string) => {
     const [d, m] = dm.split(".").map((n) => parseInt(n, 10));
     return (m || 0) * 100 + (d || 0);
 };
-
-const americanizeDate = (date: string) => {
-    const [dayStr, monthStr] = date.split(".");
-    return `${monthStr}/${dayStr}`
-}
 
 export default function MainPanel() {
     const [data, setData] = useState<Race[] | null>(null);
@@ -105,16 +93,7 @@ export default function MainPanel() {
                         </thead>
                         <tbody>
                         {data.map((r, i) => (
-                            <tr key={i} style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
-                                <td style={{padding: "8px 6px"}}><MonitorCheckbox uuid={r.id} isActive={activeId.has(r.id)}/></td>
-                                <td style={{padding: "8px 6px", whiteSpace: "nowrap" }}>
-                                    {r.end ? `${americanizeDate(r.start)} – ${americanizeDate(r.end)}` : americanizeDate(r.start)}
-                                </td>
-                                <td style={{ padding: "8px 6px" }}>{r.name}</td>
-                                <td style={{ padding: "8px 6px" }}>{r.country}</td>
-                                <td style={{ padding: "8px 6px" }}>{r.type == 1 ? "Classic" : "Stage Race"}</td>
-                                <td style={{ padding: "8px 6px" }}>{r.level}</td>
-                            </tr>
+                            <TableRow key={r.id} race={r} activeList={activeId}/>
                         ))}
                         </tbody>
                     </table>

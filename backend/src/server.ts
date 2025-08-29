@@ -1,87 +1,182 @@
-import path from "path";
+// server.ts
+import path from "node:path";
+import fs from "node:fs/promises";
 import express from "express";
-import dotenv from "dotenv";
-import fs from "fs";
+import cors from "cors";
+
 import { addRace, removeRace, listRaces } from "./Database";
-import {HandleScan} from "./DownloadManager";
+import type { RaceFields } from "./Database";
+import { HandleScan } from "./DownloadManager";
+import { strToDate, isUuidV4 } from "./Utils";
 
-dotenv.config();
+// ---------- Config ----------
+const PORT = Number(process.env.PORT ?? 3000);
+const PUBLIC_DIR = process.env.PUBLIC_DIR
+    ? path.resolve(process.env.PUBLIC_DIR)
+    : path.resolve(process.cwd(), "public");
+const RACES_JSON = path.join(PUBLIC_DIR, "races.json");
+const SCAN_INTERVAL_MS = Number(process.env.SCAN_INTERVAL_MIN * 60 * 1000 ?? 15 * 60 * 1000);
+const API_KEY = process.env.API_KEY ?? "";
 
-const app = express();
-const PORT = Number(process.env.PORT) || 3000;
-
-const PUBLIC_DIR = path.join(process.cwd(), "public");
-
-const racesPath = path.join(PUBLIC_DIR, "races.json");
-const racesFile = JSON.parse(fs.readFileSync(racesPath, "utf-8"))["races"];
-
-function strToDate(str: string): Date {
-    const [dayStr, monthStr] = str.split(".");
-    const day = Number(dayStr);
-    const month = Number(monthStr) - 1; // JS months are 0-based
-    const now = new Date();
-
-    // default to current year
-    return new Date(now.getFullYear(), month, day);
+// ---------- Utils ----------
+async function loadRacesFile(): Promise<any[]> {
+    const buf = await fs.readFile(RACES_JSON, "utf8").catch((e) => {
+        console.error("Failed to read races.json:", e.message);
+        throw new Error("races.json missing or unreadable");
+    });
+    let json: any;
+    try {
+        json = JSON.parse(buf);
+    } catch {
+        throw new Error("races.json is invalid JSON");
+    }
+    const arr = Array.isArray(json?.races) ? json.races : [];
+    return arr;
 }
+
+function apiKeyGuard(req: express.Request, res: express.Response, next: express.NextFunction) {
+    if (!API_KEY) return next();
+    const key = req.header("X-API-Key");
+    if (key && key === API_KEY) return next();
+    return res.status(401).json({ error: "Unauthorized" });
+}
+
+let scanTimer: NodeJS.Timeout | null = null;
+let scanning = false;
+function scheduleScan(delay = 1000) {
+    if (scanTimer) return;
+    scanTimer = setTimeout(async () => {
+        scanTimer = null;
+        if (scanning) return;
+        scanning = true;
+        try {
+            await HandleScan();
+        } catch (e) {
+            console.error("HandleScan error:", (e as Error)?.message || e);
+        } finally {
+            scanning = false;
+        }
+    }, delay);
+}
+
+// ---------- App ----------
+const app = express();
+app.disable("x-powered-by");
+app.use(cors());
+app.use(express.json());
+
 
 app.get("/health", (_req, res) => res.json({ status: "ok" }));
 
-app.post("/monitor", (req, res) => {
-    const { id } = req.query;
-    if (!id || Array.isArray(id)) return res.status(400).json({ error: "Missing id" });
+app.post("/monitor", apiKeyGuard, async (req, res) => {
+    const id = String(req.query.id ?? "");
+    if (!id || !isUuidV4(id)) return res.status(400).json({ error: "Missing or invalid id" });
+
     try {
-        const race = racesFile.find((r: any) => r.id === id);
-        addRace(String(id), {
-            name:race.name,
-            type:race.type,
-            level:race.level,
-            start_date:strToDate(race.start),
-            end_date:race.end ? strToDate(race.end) : null,
-            acquired: false
-        }); // or include fields: { name: "..." }
+        const races = await loadRacesFile();
+        const race = races.find((r: any) => r?.id === id.split("::")[0]);
+        if (!race) return res.status(404).json({ error: "Race not found in races.json" });
+
+        const start = strToDate(race.start);
+        if (!start) return res.status(400).json({ error: "Invalid start date" });
+
+        const end = race.end ? strToDate(race.end) : null;
+        if (race.end && !end) return res.status(400).json({ error: "Invalid end date" });
+
+        if(race.type == 1){
+            addRace(id, {
+                name: race.name,
+                type: Number(race.type),
+                level: String(race.level ?? ""),
+                start_date: start,
+                end_date: end,
+                acquired: false
+            });
+        }else{
+            if(id.split("::")[1]){
+                addRace(id, {
+                    name: race.name + " – Stage " + id.split("::")[1],
+                    type: Number(race.type),
+                    level: String(race.level ?? ""),
+                    start_date: start,
+                    end_date: end,
+                    acquired: false
+                });
+            }else{
+                for(let i = 1; i <= race.stages; i++){
+                    addRace(id + "::" + i, {
+                        name: race.name + " Stage " + String(i),
+                        type: Number(race.type),
+                        level: String(race.level ?? ""),
+                        start_date: start,
+                        end_date: end,
+                        acquired: false
+                    });
+                }
+            }
+        }
+
+
+
         console.log("Added UUID:", id);
+        scheduleScan(1000);
         res.json({ ok: true });
     } catch (e: any) {
-        res.status(400).json({ error: e.message });
-        console.error(e);
+        res.status(400).json({ error: e.message || "Failed to add race" });
     }
 });
 
-app.delete("/monitor", (req, res) => {
-    const { id } = req.query;
-    if (!id || Array.isArray(id)) return res.status(400).json({ error: "Missing id" });
+app.delete("/monitor", apiKeyGuard, async (req, res) => {
+    const id = String(req.query.id ?? "");
+    if (!id || !isUuidV4(id)) return res.status(400).json({ error: "Missing or invalid id" });
+
     try {
-        const deleted = removeRace(String(id));
+        const races = await loadRacesFile();
+        const race = races.find((r: any) => r?.id === id.split("::")[0]);
+        let deleted = "";
+        if(race.type == 1 || id.split("::")[1]){deleted = removeRace(id);}
+        else{
+            for(let i = 1; i <= race.stages; i++){
+                deleted = removeRace(id + "::" + i);
+            }
+        }
         console.log("Deleted UUID:", id);
         res.json({ ok: true, deleted });
     } catch (e: any) {
-        res.status(400).json({ error: e.message });
+        res.status(400).json({ error: e.message || "Failed to delete race" });
     }
 });
 
 app.get("/monitor", (req, res) => {
     try {
-        const races = listRaces();
-        const ids = races.map(r => r.id);
-        res.json({ ok: true, ids });
+        const races: RaceFields[] = listRaces();
+        res.json({ ok: true, ids: races.map((r) => r.id) });
     } catch (err: any) {
         console.error("Error reading races:", err);
         res.status(500).json({ ok: false, error: err.message });
     }
 });
 
-HandleScan();
-const SCAN_INTERVAL_MS = 15 * 60 * 1000;
-setInterval(HandleScan, SCAN_INTERVAL_MS);
-
-// Static files
-app.use(express.static(PUBLIC_DIR, {}));
-
-// 404 for non-HTML (if it falls through)
+app.use(express.static(PUBLIC_DIR));
 app.use((_req, res) => res.status(404).json({ error: "Not found" }));
 
-app.listen(PORT, () => {
-    console.log(`Static server running at http://localhost:${PORT}`);
+if (SCAN_INTERVAL_MS > 0) {
+    setInterval(() => scheduleScan(0), SCAN_INTERVAL_MS);
+    console.log(`Periodic scan every ${SCAN_INTERVAL_MS / 1000 / 60} minute(s).`);
+} else {
+    console.log("Periodic scan disabled (SCAN_INTERVAL_MIN=0).");
+}
+
+const server = app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server http://0.0.0.0:${PORT}`);
     console.log(`Serving ${PUBLIC_DIR}`);
+    scheduleScan(0);
 });
+
+for (const sig of ["SIGINT", "SIGTERM"] as const) {
+    process.on(sig, () => {
+        console.log(`\n${sig} received, shutting down...`);
+        if (scanTimer) clearTimeout(scanTimer);
+        server.close(() => process.exit(0));
+    });
+}
