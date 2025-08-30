@@ -251,7 +251,7 @@ export async function HandleScan(): Promise<void> {
             console.log("Copied:", srcVideoPath, "→", destVideoPath);
             console.log("Copied:", nfoPath, "→", destNfoPath);
 
-            Optional: ping Jellyfin (only if creds provided)
+            // Optional: ping Jellyfin (only if creds provided)
             if (process.env.JELLYFIN_URL && process.env.JELLYFIN_API_KEY) {
                 try {
                     await refreshAllLibraries(process.env.JELLYFIN_URL, process.env.JELLYFIN_API_KEY);
