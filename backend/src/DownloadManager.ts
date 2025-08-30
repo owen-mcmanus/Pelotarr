@@ -200,7 +200,7 @@ export async function HandleScan(): Promise<void> {
         const year = seasonFromDate(race.start_date);
         const videoFile = safeFilename(`${race.name} ${year}.mp4`);
         const srcVideoPath = path.join(DOWNLOAD_DIR, videoFile);
-        const destVideoPath = race.type === 1 ? path.join(SHOWS_DIR, "Cycling Classics", videoFile) : path.join(SHOWS_DIR, "Cycling Stage Races", race.name.split(" – Stage")[0] + " 2025", videoFile);
+        const destVideoPath = race.type === 1 ? path.join(SHOWS_DIR, "Cycling Classics", "2025", videoFile) : path.join(SHOWS_DIR, "Cycling Stage Races", race.name.split(" – Stage")[0] + " 2025", videoFile);
 
         // Extract a short plot from HTML (2nd paragraph preferred)
         let plot = "";
@@ -251,14 +251,14 @@ export async function HandleScan(): Promise<void> {
             console.log("Copied:", srcVideoPath, "→", destVideoPath);
             console.log("Copied:", nfoPath, "→", destNfoPath);
 
-            // Optional: ping Jellyfin (only if creds provided)
-            // if (process.env.JELLYFIN_URL && process.env.JELLYFIN_API_KEY) {
-            //     try {
-            //         await refreshAllLibraries(process.env.JELLYFIN_URL, process.env.JELLYFIN_API_KEY);
-            //     } catch (e) {
-            //         console.warn("Jellyfin refresh failed:", (e as Error).message);
-            //     }
-            // }
+            Optional: ping Jellyfin (only if creds provided)
+            if (process.env.JELLYFIN_URL && process.env.JELLYFIN_API_KEY) {
+                try {
+                    await refreshAllLibraries(process.env.JELLYFIN_URL, process.env.JELLYFIN_API_KEY);
+                } catch (e) {
+                    console.warn("Jellyfin refresh failed:", (e as Error).message);
+                }
+            }
         } catch (err) {
             console.error("Download or post-processing failed:", err);
             // optional: rollback DB state if you changed it earlier
