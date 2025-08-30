@@ -167,10 +167,10 @@ export async function HandleScan(): Promise<void> {
 
         console.log("Searching for:", race.name);
 
-        if (race.type !== 1) {
-            console.log("Sorry, stage races are not yet supported.\n");
-            continue;
-        }
+        // if (race.type !== 1) {
+        //     console.log("Sorry, stage races are not yet supported.\n");
+        //     continue;
+        // }
 
         console.log("Race took place at:", race.start_date.toISOString());
         const now = new Date();
