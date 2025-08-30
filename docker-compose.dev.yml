@@ -1,7 +1,8 @@
 # docker-compose.dev.yml
 services:
-  api:
+  pelotarr-backend:
     image: node:20-bookworm-slim
+    container_name: pelotarr-backend
     working_dir: /app
     command: sh -lc "corepack enable && yarn install && yarn dev"
     ports: ["5172:5172"]
@@ -17,9 +18,12 @@ services:
       PUBLIC_DIR: /public
       SCAN_INTERVAL_MIN: 15
       API_KEY: 23iahhsd89ay2hbads89ahsdlkh
+      JELLYFIN_URL: http://10.0.0.51:8096
+      JELLYFIN_API_KEY: d1425da98a014855b3a89e9e51d9cb94
 
-  web:
+  pelotarr-web:
     image: node:20-bookworm-slim
+    container_name: pelotarr-web
     working_dir: /app
     command: sh -lc "corepack enable && yarn install && yarn dev --host 0.0.0.0"
     ports: ["5177:5177"]
@@ -31,4 +35,4 @@ services:
       BACKEND_PORT: 5172
       VITE_API_KEY: 23iahhsd89ay2hbads89ahsdlkh
     depends_on:
-      - api
+      - pelotarr-backend

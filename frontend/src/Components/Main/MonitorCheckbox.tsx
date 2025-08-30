@@ -15,7 +15,6 @@ export default function MonitorCheckbox({uuid, isActive, stage, onToggle}: { uui
         onToggle?.(e.target.checked);
 
         try {
-                console.log(API_KEY);
                 const headers: Record<string, string> = {};
                 if (API_KEY) headers["X-API-Key"] = API_KEY;
 

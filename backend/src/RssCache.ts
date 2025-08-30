@@ -5,6 +5,7 @@ const Parser = require('rss-parser'); // yarn add rss-parser
 
 const CLASSICS_FEED_URL = 'https://tiz-cycling.tv/categories/classics/feed/';
 const STAGES_FEED_URL = 'https://tiz-cycling.tv/categories/stage-races/feed/';
+const GRAND_FEED_URL = 'https://tiz-cycling.tv/categories/grand-tour/feed/';
 const CLASSICS_CACHE_FILE =  '/public/tiz_classics_cache.json';
 const STAGES_CACHE_FILE =  '/public/tiz_stages_cache.json';
 
@@ -47,13 +48,23 @@ function saveCache(items, type: CacheType) {
     fs.writeFileSync(type === CacheType.STAGES ? STAGES_CACHE_FILE : CLASSICS_CACHE_FILE, JSON.stringify(items, null, 2), 'utf-8');
 }
 
+async function fetchFeedPageGrandTour(page = 1) {
+    const urlBase = GRAND_FEED_URL;
+    const url = page === 1 ? urlBase : `${urlBase}?paged=${page}`;
+    return await parser.parseURL(url);
+}
+
 /**
  * Fetch a single feed page. page=1 → base feed; page>=2 → ?paged=page
  */
 async function fetchFeedPage(page = 1, type: CacheType) {
     const urlBase = type === CacheType.STAGES ? STAGES_FEED_URL : CLASSICS_FEED_URL;
     const url = page === 1 ? urlBase : `${urlBase}?paged=${page}`;
-    const feed = await parser.parseURL(url);
+    let feed = await parser.parseURL(url);
+    if(type === CacheType.STAGES){
+        const gt = await fetchFeedPageGrandTour(page);
+        feed.items = [ ...(feed.items ?? []), ...(gt.items ?? []) ];
+    }
     return feed.items?.map(pickFields) ?? [];
 }
 

@@ -106,24 +106,36 @@ function pickMutableFields(fields: Partial<RaceFields>): Array<[MutableCol, SqlV
 
 // --- CRUD ---
 /**
- * Insert a race by UUID. Throws if the row already exists.
+ * Insert a race by UUID. Does not throw if the row already exists.
  * Only columns present in `fields` are included.
  */
 export function addRace(id: string, fields: Partial<RaceFields> = {}) {
     ensureSchema();
     if (!isUuidV4(id)) throw new Error("Invalid UUID");
 
-    const pairs = pickMutableFields(fields);
+    const pairs = pickMutableFields(fields);             // Array<[col, val]>
     const cols = ["id", ...pairs.map(([k]) => k)];
     const placeholders = cols.map(() => "?");
     const vals: SqlValue[] = [id, ...pairs.map(([, v]) => v)];
 
-    const sql =
-        `INSERT INTO races (${cols.map(c => `"${c}"`).join(",")}) ` +
-        `VALUES (${placeholders.join(",")})`;
+    // If we have fields, update them on conflict; otherwise do nothing.
+    const conflictClause =
+        pairs.length > 0
+            ? `ON CONFLICT("id") DO UPDATE SET ${pairs
+                .map(([k]) => `"${k}" = excluded."${k}"`)
+                .join(", ")}`
+            : `ON CONFLICT("id") DO NOTHING`;
 
-    const stmt = db.prepare(sql);
-    return stmt.run(...(vals as unknown[]));
+    const sql =
+        `INSERT INTO races (${cols.map((c) => `"${c}"`).join(",")}) ` +
+        `VALUES (${placeholders.join(",")}) ` +
+        conflictClause;
+
+    const info = db.prepare(sql).run(...(vals as unknown[]));
+    // info.changes:
+    //  - 1 if inserted or updated
+    //  - 0 if row already existed and DO NOTHING path
+    return info;
 }
 
 /** Remove a race by UUID. Returns number of rows deleted (0 or 1). */

@@ -42,21 +42,33 @@ function apiKeyGuard(req: express.Request, res: express.Response, next: express.
 }
 
 let scanTimer: NodeJS.Timeout | null = null;
-let scanning = false;
+let running = false;
+let pending = false;
+
 function scheduleScan(delay = 1000) {
-    if (scanTimer) return;
-    scanTimer = setTimeout(async () => {
-        scanTimer = null;
-        if (scanning) return;
-        scanning = true;
-        try {
+    pending = true;                 // remember that someone asked for a scan
+    if (scanTimer) return;          // debounce the timer
+    scanTimer = setTimeout(start, delay);
+}
+
+async function start() {
+    scanTimer = null;               // timer consumed
+
+    if (running) return;            // a run is already in progress; the loop below will catch `pending`
+    running = true;
+
+    try {
+        // Drain all pending requests. If more come in during HandleScan(),
+        // `pending` will be set to true and the loop runs again.
+        while (pending) {
+            pending = false;
             await HandleScan();
-        } catch (e) {
-            console.error("HandleScan error:", (e as Error)?.message || e);
-        } finally {
-            scanning = false;
         }
-    }, delay);
+    } catch (e) {
+        console.error("HandleScan error:", (e as Error)?.message || e);
+    } finally {
+        running = false;
+    }
 }
 
 // ---------- App ----------
