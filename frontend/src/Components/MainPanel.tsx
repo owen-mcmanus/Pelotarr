@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import MonitorCheckbox from "./Main/MonitorCheckbox.tsx";
 import TableRow from "./Main/TableRow.tsx";
-import type {Race} from "../types.ts";
+import type {Race, RaceStatus} from "../types.ts";
 
 
 const YELLOW = "#FFCC00";
@@ -15,6 +15,7 @@ const startKey = (dm: string) => {
 export default function MainPanel() {
     const [data, setData] = useState<Race[] | null>(null);
     const [activeId, setActiveId] = useState<Set<string>>(new Set());
+    const [raceStatus, setRaceStatus] = useState<RaceStatus[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -65,6 +66,19 @@ export default function MainPanel() {
             }
         })();
 
+        (async () => {
+            try {
+                const res = await fetch("/api/status", { headers: { Accept: "application/json" } });
+                if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+                const json = await res.json();
+                const status: RaceStatus[] = Array.isArray(json?.races) ? json.races : [];
+                setRaceStatus(status);
+                console.log(status);
+            } catch (e: any) {
+            } finally {
+            }
+        })();
+
         return () => ac.abort();
     }, []);
 
@@ -93,7 +107,7 @@ export default function MainPanel() {
                         </thead>
                         <tbody>
                         {data.map((r, i) => (
-                            <TableRow key={r.id} race={r} activeList={activeId}/>
+                            <TableRow key={r.id} race={r} activeList={activeId} raceStatus={raceStatus}/>
                         ))}
                         </tbody>
                     </table>

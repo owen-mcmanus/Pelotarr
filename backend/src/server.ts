@@ -8,6 +8,7 @@ import { addRace, removeRace, listRaces } from "./Database";
 import type { RaceFields } from "./Database";
 import { HandleScan } from "./DownloadManager";
 import { strToDate, isUuidV4 } from "./Utils";
+import {checkServerStatus, RaceStatus} from "./Status";
 
 // ---------- Config ----------
 const PORT = Number(process.env.PORT ?? 3000);
@@ -163,6 +164,16 @@ app.get("/monitor", (req, res) => {
     try {
         const races: RaceFields[] = listRaces();
         res.json({ ok: true, ids: races.map((r) => r.id) });
+    } catch (err: any) {
+        console.error("Error reading races:", err);
+        res.status(500).json({ ok: false, error: err.message });
+    }
+});
+
+app.get("/status", async (req, res) => {
+    try {
+        const races: RaceStatus[] = await checkServerStatus();
+        res.json({ ok: true, races });
     } catch (err: any) {
         console.error("Error reading races:", err);
         res.status(500).json({ ok: false, error: err.message });

@@ -8,3 +8,8 @@ export type Race = {
     id: string;
     stages?: number;      // count of stages (optional)
 };
+
+export type RaceStatus = {
+    id: string;
+    status: string;
+}
