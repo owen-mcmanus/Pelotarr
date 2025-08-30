@@ -7,7 +7,7 @@ export default defineConfig({
         port: process.env.PORT,
         proxy: {
             '/api': {
-                target: 'http://api:' + process.env.BACKEND_PORT,
+                target: 'http://pelotarr-backend:' + process.env.BACKEND_PORT,
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/api/, '')
             }
