@@ -215,12 +215,12 @@ export async function HandleScan(): Promise<void> {
 
         try {
             // Download to /downloads
-            // await downloadFile(downloadUrl, srcVideoPath, {
-            //     overwrite: false,
-            //     timeoutMs: 120_000,
-            //     allowedDir: DOWNLOAD_DIR,
-            //     userAgent: USER_AGENT
-            // });
+            await downloadFile(downloadUrl, srcVideoPath, {
+                overwrite: false,
+                timeoutMs: 120_000,
+                allowedDir: DOWNLOAD_DIR,
+                userAgent: USER_AGENT
+            });
 
             // Write NFO next to the video (in downloads first)
             const { nfoPath } = await buildEpisodeMetadata(race, srcVideoPath, plot);
