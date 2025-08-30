@@ -103,14 +103,12 @@ export async function getDownloadURLFromName(name: string): Promise<string> {
 }
 
 function buildEpisodeMetadata(race: RaceFields, videoPath: string, plot: string) {
-    const season = race.type === 1 ? seasonFromDate(race.start_date) : 25*1000 + (race.start_date.getMonth())*100 + race.start_date.getDate();
     const episode = race.type === 1 ? (race.start_date.getMonth())*100 + race.start_date.getDate() : Number(race.id.split("::")[1]);
     return writeEpisodeNfo({
         videoPath,
-        season,
         episode,
-        title: path.basename(videoPath),
-        showtitle: `${race.name} - ${season}`,
+        title: `${race.name}`,
+        showtitle: `${race.name}`,
         plot,
         aired: isoDateOnly(race.start_date),
         genres: ["Cycling", "Sports"],
@@ -200,7 +198,7 @@ export async function HandleScan(): Promise<void> {
         const year = seasonFromDate(race.start_date);
         const videoFile = safeFilename(`${race.name} ${year}.mp4`);
         const srcVideoPath = path.join(DOWNLOAD_DIR, videoFile);
-        const destVideoPath = race.type === 1 ? path.join(SHOWS_DIR, "Cycling Classics", "2025", videoFile) : path.join(SHOWS_DIR, "Cycling Stage Races", race.name.split(" – Stage")[0] + " 2025", videoFile);
+        const destVideoPath = race.type === 1 ? path.join(SHOWS_DIR, "Cycling Classics", "2025", videoFile) : path.join(SHOWS_DIR, "Cycling Stage Races", race.name.split(" Stage")[0] + " 2025", videoFile);
 
         // Extract a short plot from HTML (2nd paragraph preferred)
         let plot = "";
@@ -239,6 +237,9 @@ export async function HandleScan(): Promise<void> {
             await fsp.copyFile(srcVideoPath, destVideoPath);
             await fsp.copyFile(nfoPath, destNfoPath);
 
+            await fsp.unlink(srcVideoPath);
+            await fsp.unlink(nfoPath);
+
             // Update DB AFTER success
             const stats = await fsp.stat(srcVideoPath);
             await updateRace(race.id, {
@@ -248,8 +249,8 @@ export async function HandleScan(): Promise<void> {
                 file_size_gb: Number((stats.size / (1024 ** 3)).toFixed(3))
             });
 
-            console.log("Copied:", srcVideoPath, "→", destVideoPath);
-            console.log("Copied:", nfoPath, "→", destNfoPath);
+            console.log("Moved:", srcVideoPath, "→", destVideoPath);
+            console.log("Moved:", nfoPath, "→", destNfoPath);
 
             // Optional: ping Jellyfin (only if creds provided)
             if (process.env.JELLYFIN_URL && process.env.JELLYFIN_API_KEY) {

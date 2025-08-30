@@ -4,7 +4,6 @@ import { promises as fsp } from "node:fs";
 import path from "node:path";
 
 type EpisodeNfoInput = {
-    season: number;                 // required
     episode: number;                // required
     title: string;                  // required
     showtitle: string;              // required
@@ -33,7 +32,6 @@ function sanitize(s: string, limit = MAX_TEXT) {
 }
 
 function assertRequired(meta: EpisodeNfoInput) {
-    if (meta.season == null || !Number.isFinite(meta.season)) throw new Error("season is required");
     if (meta.episode == null || !Number.isFinite(meta.episode)) throw new Error("episode is required");
     if (!meta.title) throw new Error("title is required");
     if (!meta.showtitle) throw new Error("showtitle is required");
@@ -48,7 +46,7 @@ export function buildEpisodeNfoXml(input: EpisodeNfoInput): string {
     assertRequired(input);
 
     const {
-        season, episode, title, showtitle, plot, aired,
+        episode, title, showtitle, plot, aired,
         status = "Ended",
         studio, country, language,
         genres = [], tags = [], thumbs = [],
@@ -64,7 +62,6 @@ export function buildEpisodeNfoXml(input: EpisodeNfoInput): string {
         episodedetails: {
             title: sanitize(title, 512),
             showtitle: sanitize(showtitle, 512),
-            season: String(season),
             episode: String(episode),
             plot: sanitize(plot),
             aired,
