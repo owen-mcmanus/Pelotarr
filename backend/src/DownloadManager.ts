@@ -140,6 +140,32 @@ function pickPlot(paras: string[], maxLen = 1200): string {
     return single.length <= maxLen ? single : (single.slice(0, maxLen) + "…");
 }
 
+export function sanitizeDirName(input: string, replacement = " "): string {
+    // Keep case & spaces; remove accents (é → e)
+    let s = input.normalize("NFKD").replace(/[\u0300-\u036f]/g, "");
+
+    // Replace any char not A–Z, a–z, 0–9, or space
+    s = s.replace(/[^A-Za-z0-9 ]+/g, replacement);
+
+    // Collapse repeated replacement chars (but don't touch spaces)
+    const repEsc = replacement.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
+    s = s.replace(new RegExp(`${repEsc}{2,}`, "g"), replacement);
+
+    // Disallow trailing spaces/dots (Windows)
+    s = s.replace(/[ .]+$/g, "");
+
+    // Avoid Windows reserved names (case-insensitive)
+    if (/^(con|prn|aux|nul|com[1-9]|lpt[1-9])$/i.test(s.trim())) {
+        s = `${s}-dir`;
+    }
+
+    // Ensure non-empty and reasonable length
+    if (!s.trim()) s = "untitled";
+    if (s.length > 240) s = s.slice(0, 240);
+
+    return s;
+}
+
 // ---------- Main scan ----------
 export async function HandleScan(): Promise<void> {
     console.log("Updating Cache...");
@@ -198,7 +224,7 @@ export async function HandleScan(): Promise<void> {
         const year = seasonFromDate(race.start_date);
         const videoFile = safeFilename(`${race.name} ${year}.mp4`);
         const srcVideoPath = path.join(DOWNLOAD_DIR, videoFile);
-        const destVideoPath = race.type === 1 ? path.join(SHOWS_DIR, "Cycling Classics", "2025", videoFile) : path.join(SHOWS_DIR, "Cycling Stage Races", race.name.split(" Stage")[0] + " 2025", videoFile);
+        const destVideoPath = race.type === 1 ? path.join(SHOWS_DIR, "Cycling Classics", "2025", videoFile) : path.join(SHOWS_DIR, "Cycling Stage Races", sanitizeDirName(race.name.split(" Stage")[0] + " 2025"), videoFile);
 
         // Extract a short plot from HTML (2nd paragraph preferred)
         let plot = "";
