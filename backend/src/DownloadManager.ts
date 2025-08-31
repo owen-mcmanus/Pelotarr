@@ -50,7 +50,8 @@ function buildUrlCandidates(displayTitle: string): string[] {
     if (!yearMatch) return [];
     const year = yearMatch[1];
 
-    const suffixMatch = displayTitle.match(/\[(.+?)\]/);
+    let suffixMatch = displayTitle.match(/\[(.+?)\]/);
+    if(suffixMatch) suffixMatch[1] = suffixMatch[1].replace("–", "-")
     const suffix = (suffixMatch ? suffixMatch[1] : "FULL RACE").trim();
 
     // 2) strip trailing [ ... ]
@@ -97,6 +98,7 @@ function buildUrlCandidates(displayTitle: string): string[] {
 
 export async function getDownloadURLFromName(name: string): Promise<string> {
     for (const u of buildUrlCandidates(name)) {
+        console.log(`Downloading ${u}`);
         if (await urlOk(u)) return u;
     }
     return "";

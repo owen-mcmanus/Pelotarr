@@ -11,7 +11,8 @@ export default function NavBar(){
                 width: "210px",
             }}
         >
-            <NavButton label={"Home"} icon={"/play.svg"} route={"/dashboard"} />
+            <NavButton label={"Men"} icon={"/play.svg"} route={"/men"} />
+            <NavButton label={"Women"} icon={"/play.svg"} route={"/women"} />
             <NavButton label={"Calendar"} icon={"/calendar.svg"} route={"/calendar"}/>
             <NavButton label={"Settings"} icon={"/settings.svg"} route={"/settings"}/>
 

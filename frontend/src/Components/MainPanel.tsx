@@ -3,6 +3,10 @@ import MonitorCheckbox from "./Main/MonitorCheckbox.tsx";
 import TableRow from "./Main/TableRow.tsx";
 import type {Race, RaceStatus} from "../types.ts";
 
+export enum Category {
+    MEN = "races_men",
+    WOMEN = "races_women",
+};
 
 const YELLOW = "#FFCC00";
 
@@ -12,7 +16,7 @@ const startKey = (dm: string) => {
     return (m || 0) * 100 + (d || 0);
 };
 
-export default function MainPanel() {
+export function MainPanel({category}: {category: Category}) {
     const [data, setData] = useState<Race[] | null>(null);
     const [activeId, setActiveId] = useState<Set<string>>(new Set());
     const [raceStatus, setRaceStatus] = useState<RaceStatus[]>([]);
@@ -41,7 +45,7 @@ export default function MainPanel() {
                     throw new Error(msg);
                 }
 
-                const json = (await res.json())["races"];
+                const json = (await res.json())[category];
                 if (!Array.isArray(json)) throw new Error("Unexpected JSON shape");
                 const sorted = [...(json as Race[])].sort(
                     (a, b) => startKey(a.start) - startKey(b.start)

@@ -922,10 +922,270 @@
     }
   ],
   "races_women": [
-    { "start": "17.01", "end": "19.01", "name": "Santos Tour Down Under - Women", "type": 2, "level": "WWT", "country": "Australia", "stages": 3, "id": "3da0c7b7-68c5-46e1-a746-feb7a1ee3b82" },
-    { "start": "01.02", "end": null, "name": "Cadel Evans Great Ocean Road Race - Women", "type": 1, "level": "WWT", "country": "Australia", "id": "70e923a6-af5d-403a-9b62-c475128f2d49" },
-    { "start": "06.02", "end": "09.02", "name": "UAE Tour Women", "type": 2, "level": "WWT", "country": "United Arab Emirates", "stages": 4, "id": "70d81bbb-2961-4292-b061-3382a8310e37" },
-    { "start": "01.03", "end": null, "name": "Omloop Nieuwsblad WE", "type": 1, "level": "WWT", "country": "Belgium", "id": "5744189c-f3f0-49e8-8124-01b99138415a" },
-    { "start": "08.03", "end": null, "name": "Strade Bianche Donne", "type": 1, "level": "WWT", "country": "Italy", "id": "b87eec49-3c45-4dae-9e79-3de47b0f85d0" }, { "start": "16.03", "end": null, "name": "Trofeo Alfredo Binda - Comune di Cittiglio", "type": 1, "level": "WWT", "country": "Italy", "id": "9092d4dc-92b2-44c4-b758-c94545169c62" }, { "start": "22.03", "end": null, "name": "Milano-Sanremo Donne", "type": 1, "level": "WWT", "country": "Italy", "id": "0d6d440c-ead3-4090-bcae-9366173126e6" }, { "start": "27.03", "end": null, "name": "Classic Brugge-De Panne WE", "type": 1, "level": "WWT", "country": "Belgium", "id": "0055c676-a194-4ad4-ae17-9a8eadc990f1" }, { "start": "30.03", "end": null, "name": "Gent-Wevelgem In Flanders Fields WE", "type": 1, "level": "WWT", "country": "Belgium", "id": "31365bfa-b10e-4bce-b14a-dd33752d5391" }, { "start": "06.04", "end": null, "name": "Ronde van Vlaanderen - Tour des Flandres WE", "type": 1, "level": "WWT", "country": "Belgium", "id": "ba2eda3b-a0ee-4b72-8d4a-8a296f02ac35" }, { "start": "12.04", "end": null, "name": "Paris-Roubaix Femmes", "type": 1, "level": "WWT", "country": "France", "id": "baf87bd7-7d79-453c-8c23-a79cc62451dd" }, { "start": "20.04", "end": null, "name": "Amstel Gold Race Ladies Edition", "type": 1, "level": "WWT", "country": "Netherlands", "id": "cf35bf0d-6009-485e-80e3-fc67ff7c634b" }, { "start": "23.04", "end": null, "name": "La Flèche Wallonne Féminine", "type": 1, "level": "WWT", "country": "Belgium", "id": "71136b43-2a9f-4146-97d2-a45ce89937d2" }, { "start": "27.04", "end": null, "name": "Liège-Bastogne-Liège Femmes", "type": 1, "level": "WWT", "country": "Belgium", "id": "db825cce-cc7c-4f4e-b177-3017b5f93ef7" }, { "start": "04.05", "end": "10.05", "name": "Vuelta España Femenina", "type": 2, "level": "WWT", "country": "Spain", "stages": 7, "id": "0af1ef17-cfcf-4713-bb10-b2ae98444db1" }, { "start": "16.05", "end": "18.05", "name": "Itzulia Women", "type": 2, "level": "WWT", "country": "Spain", "stages": 3, "id": "ff549dc9-118f-4593-91f7-79522af8f8f2" }, { "start": "22.05", "end": "25.05", "name": "Vuelta a Burgos Feminas", "type": 2, "level": "WWT", "country": "Spain", "stages": 4, "id": "1174d597-0be7-4b9d-9a10-aeecbbbf49fc" }, { "start": "05.06", "end": "08.06", "name": "Tour of Britain Women", "type": 2, "level": "WWT", "country": "United Kingdom", "stages": 4, "id": "74497ec3-bfd0-4182-8f6d-7c0c54cc09fd" }, { "start": "12.06", "end": "15.06", "name": "Tour de Suisse Women", "type": 2, "level": "WWT", "country": "Switzerland", "stages": 4, "id": "91bc3ec2-2326-4065-895e-78a9106aa547" }, { "start": "21.06", "end": null, "name": "Copenhagen Sprint", "type": 1, "level": "WWT", "country": "Denmark", "id": "668c0a2b-e5a8-42d6-8222-f97a65ced2ee" }, { "start": "06.07", "end": "13.07", "name": "Giro d'Italia Women", "type": 2, "level": "WWT", "country": "Italy", "stages": 8, "id": "4d595160-bbf4-4af9-a5db-b36d887c890c" }, { "start": "26.07", "end": "03.08", "name": "Tour de France Femmes", "type": 2, "level": "WWT", "country": "France", "stages": 9, "id": "f738d8bb-6de2-4f02-aa81-532a51ed49d7" }, { "start": "15.08", "end": "17.08", "name": "Tour de Romandie Féminin", "type": 2, "level": "WWT", "country": "Switzerland", "stages": 3, "id": "03ac8796-146f-4842-a010-9af87e325b2d" }, { "start": "19.08", "end": "24.08", "name": "Tour of Scandinavia", "type": 2, "level": "WWT", "country": "Norway", "stages": 6, "id": "c66b0194-b5e2-4b7c-ab7a-6fa6e9ab3e8f" }, { "start": "30.08", "end": null, "name": "Classic Lorient Agglomération - CERATIZIT", "type": 1, "level": "WWT", "country": "France", "id": "42d4ea1b-761a-4dfd-975b-10c239f7de62" }, { "start": "02.09", "end": "07.09", "name": "Simac Ladies Tour", "type": 2, "level": "WWT", "country": "Netherlands", "stages": 6, "id": "d8696d58-0e57-457f-81e8-d50df7af4bd3" }, { "start": "14.10", "end": "16.10", "name": "Tour of Chongming Island", "type": 2, "level": "WWT", "country": "China", "stages": 3, "id": "3aa8e349-8235-4e6d-8d1f-db996a5b3e37" }, { "start": "19.10", "end": null, "name": "Tour of Guangxi", "type": 1, "level": "WWT", "country": "China", "id": "d100730f-1a45-4dc0-ad1e-15199cbab67d" }
+    {
+      "start": "17.01",
+      "end": "19.01",
+      "name": "Santos Tour Down Under",
+      "type": 2,
+      "level": "WWT",
+      "country": "Australia",
+      "stages": 3,
+      "id": "3da0c7b7-68c5-46e1-a746-feb7a1ee3b82"
+    },
+    {
+      "start": "01.02",
+      "end": null,
+      "name": "Cadel Evans Great Ocean Road Race - Women",
+      "type": 1,
+      "level": "WWT",
+      "country": "Australia",
+      "id": "70e923a6-af5d-403a-9b62-c475128f2d49"
+    },
+    {
+      "start": "06.02",
+      "end": "09.02",
+      "name": "UAE Tour Women",
+      "type": 2,
+      "level": "WWT",
+      "country": "United Arab Emirates",
+      "stages": 4,
+      "id": "70d81bbb-2961-4292-b061-3382a8310e37"
+    },
+    {
+      "start": "01.03",
+      "end": null,
+      "name": "Omloop Nieuwsblad WE",
+      "type": 1,
+      "level": "WWT",
+      "country": "Belgium",
+      "id": "5744189c-f3f0-49e8-8124-01b99138415a"
+    },
+    {
+      "start": "08.03",
+      "end": null,
+      "name": "Strade Bianche Donne",
+      "type": 1,
+      "level": "WWT",
+      "country": "Italy",
+      "id": "b87eec49-3c45-4dae-9e79-3de47b0f85d0"
+    },
+    {
+      "start": "16.03",
+      "end": null,
+      "name": "Trofeo Alfredo Binda - Comune di Cittiglio",
+      "type": 1,
+      "level": "WWT",
+      "country": "Italy",
+      "id": "9092d4dc-92b2-44c4-b758-c94545169c62"
+    },
+    {
+      "start": "22.03",
+      "end": null,
+      "name": "Milano-Sanremo Donne",
+      "type": 1,
+      "level": "WWT",
+      "country": "Italy",
+      "id": "0d6d440c-ead3-4090-bcae-9366173126e6"
+    },
+    {
+      "start": "27.03",
+      "end": null,
+      "name": "Classic Brugge-De Panne WE",
+      "type": 1,
+      "level": "WWT",
+      "country": "Belgium",
+      "id": "0055c676-a194-4ad4-ae17-9a8eadc990f1"
+    },
+    {
+      "start": "30.03",
+      "end": null,
+      "name": "Gent-Wevelgem In Flanders Fields WE",
+      "type": 1,
+      "level": "WWT",
+      "country": "Belgium",
+      "id": "31365bfa-b10e-4bce-b14a-dd33752d5391"
+    },
+    {
+      "start": "06.04",
+      "end": null,
+      "name": "Ronde van Vlaanderen - Tour des Flandres WE",
+      "type": 1,
+      "level": "WWT",
+      "country": "Belgium",
+      "id": "ba2eda3b-a0ee-4b72-8d4a-8a296f02ac35"
+    },
+    {
+      "start": "12.04",
+      "end": null,
+      "name": "Paris-Roubaix Femmes",
+      "type": 1,
+      "level": "WWT",
+      "country": "France",
+      "id": "baf87bd7-7d79-453c-8c23-a79cc62451dd"
+    },
+    {
+      "start": "20.04",
+      "end": null,
+      "name": "Amstel Gold Race Ladies Edition",
+      "type": 1,
+      "level": "WWT",
+      "country": "Netherlands",
+      "id": "cf35bf0d-6009-485e-80e3-fc67ff7c634b"
+    },
+    {
+      "start": "23.04",
+      "end": null,
+      "name": "La Flèche Wallonne Féminine",
+      "type": 1,
+      "level": "WWT",
+      "country": "Belgium",
+      "id": "71136b43-2a9f-4146-97d2-a45ce89937d2"
+    },
+    {
+      "start": "27.04",
+      "end": null,
+      "name": "Liège-Bastogne-Liège Femmes",
+      "type": 1,
+      "level": "WWT",
+      "country": "Belgium",
+      "id": "db825cce-cc7c-4f4e-b177-3017b5f93ef7"
+    },
+    {
+      "start": "04.05",
+      "end": "10.05",
+      "name": "Vuelta España Femenina",
+      "type": 2,
+      "level": "WWT",
+      "country": "Spain",
+      "stages": 7,
+      "id": "0af1ef17-cfcf-4713-bb10-b2ae98444db1"
+    },
+    {
+      "start": "16.05",
+      "end": "18.05",
+      "name": "Itzulia Women",
+      "type": 2,
+      "level": "WWT",
+      "country": "Spain",
+      "stages": 3,
+      "id": "ff549dc9-118f-4593-91f7-79522af8f8f2"
+    },
+    {
+      "start": "22.05",
+      "end": "25.05",
+      "name": "Vuelta a Burgos Feminas",
+      "type": 2,
+      "level": "WWT",
+      "country": "Spain",
+      "stages": 4,
+      "id": "1174d597-0be7-4b9d-9a10-aeecbbbf49fc"
+    },
+    {
+      "start": "05.06",
+      "end": "08.06",
+      "name": "Tour of Britain Women",
+      "type": 2,
+      "level": "WWT",
+      "country": "United Kingdom",
+      "stages": 4,
+      "id": "74497ec3-bfd0-4182-8f6d-7c0c54cc09fd"
+    },
+    {
+      "start": "12.06",
+      "end": "15.06",
+      "name": "Tour de Suisse Women",
+      "type": 2,
+      "level": "WWT",
+      "country": "Switzerland",
+      "stages": 4,
+      "id": "91bc3ec2-2326-4065-895e-78a9106aa547"
+    },
+    {
+      "start": "21.06",
+      "end": null,
+      "name": "Copenhagen Sprint",
+      "type": 1,
+      "level": "WWT",
+      "country": "Denmark",
+      "id": "668c0a2b-e5a8-42d6-8222-f97a65ced2ee"
+    },
+    {
+      "start": "06.07",
+      "end": "13.07",
+      "name": "Giro d'Italia Women",
+      "type": 2,
+      "level": "WWT",
+      "country": "Italy",
+      "stages": 8,
+      "id": "4d595160-bbf4-4af9-a5db-b36d887c890c"
+    },
+    {
+      "start": "26.07",
+      "end": "03.08",
+      "name": "Tour de France Femmes",
+      "type": 2,
+      "level": "WWT",
+      "country": "France",
+      "stages": 9,
+      "id": "f738d8bb-6de2-4f02-aa81-532a51ed49d7"
+    },
+    {
+      "start": "15.08",
+      "end": "17.08",
+      "name": "Tour de Romandie Féminin",
+      "type": 2,
+      "level": "WWT",
+      "country": "Switzerland",
+      "stages": 3,
+      "id": "03ac8796-146f-4842-a010-9af87e325b2d"
+    },
+    {
+      "start": "19.08",
+      "end": "24.08",
+      "name": "Tour of Scandinavia",
+      "type": 2,
+      "level": "WWT",
+      "country": "Norway",
+      "stages": 6,
+      "id": "c66b0194-b5e2-4b7c-ab7a-6fa6e9ab3e8f"
+    },
+    {
+      "start": "30.08",
+      "end": null,
+      "name": "Classic Lorient Agglomération - CERATIZIT",
+      "type": 1,
+      "level": "WWT",
+      "country": "France",
+      "id": "42d4ea1b-761a-4dfd-975b-10c239f7de62"
+    },
+    {
+      "start": "02.09",
+      "end": "07.09",
+      "name": "Simac Ladies Tour",
+      "type": 2,
+      "level": "WWT",
+      "country": "Netherlands",
+      "stages": 6,
+      "id": "d8696d58-0e57-457f-81e8-d50df7af4bd3"
+    },
+    {
+      "start": "14.10",
+      "end": "16.10",
+      "name": "Tour of Chongming Island",
+      "type": 2,
+      "level": "WWT",
+      "country": "China",
+      "stages": 3,
+      "id": "3aa8e349-8235-4e6d-8d1f-db996a5b3e37"
+    },
+    {
+      "start": "19.10",
+      "end": null,
+      "name": "Tour of Guangxi",
+      "type": 1,
+      "level": "WWT",
+      "country": "China",
+      "id": "d100730f-1a45-4dc0-ad1e-15199cbab67d"
+    }
   ]
 }

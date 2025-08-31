@@ -5,6 +5,7 @@ import NavBar from "../Components/NavBar.tsx";
 // import Calendar from "../Pages/Calendar";
 import Main from "../Pages/Main";
 import NotFound from "../Pages/NotFound";
+import Women from "../Pages/Women.tsx";
 
 function App() {
 
@@ -14,8 +15,9 @@ function App() {
         <div style={{ display: "flex", width: "100%"}}>
         <NavBar/>
         <Routes>
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard" element={<Main />} />
+            <Route path="/" element={<Navigate to="/men" replace />} />
+            <Route path="/men" element={<Main />} />
+            <Route path="/women" element={<Women/>} />
             {/*<Route path="/calendar" element={<Calendar />} />*/}
             <Route path="*" element={<NotFound />} />
         </Routes>

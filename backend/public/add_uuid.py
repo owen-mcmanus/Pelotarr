@@ -9,7 +9,7 @@ def main():
     with open(INPUT_FILE, "r", encoding="utf-8") as f:
         races = json.load(f)
 
-    for race in races["races"]:
+    for race in races["races_women"]:
         race["id"] = str(uuid.uuid4())
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:

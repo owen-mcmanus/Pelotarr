@@ -75,20 +75,33 @@ export function searchForRace(
     const no15k = candidates.filter((it) => !is15Km(it));
     const no20k = no15k.filter((it) => !is20Km(it));
     const no10k = no20k.filter((it) => !is10Km(it));
-    const filtered = no10k.filter((it) => !isLadies(it));
-    // const no10k = candidates;
+    let filtered = [];
+    if(race.level === "WWT"){
+        filtered = no10k.filter((it) => isLadies(it));
+    }else{
+        filtered = no10k.filter((it) => !isLadies(it));
+    }
+
 
 
 
     // 3) Normalize titles and compare with race.name
     const target = canonicalizeName(race.name);
+    const targetStage = extractStageNum(race.name);
     let bestLink = "";
     let bestContent = "";
     let bestScore = 0;
 
     for (const it of filtered) {
         const canon = canonicalizeName(it.title);
-        const score = stringSimilarity.compareTwoStrings(target, canon); // 0..1
+        let score = stringSimilarity.compareTwoStrings(target, canon); // 0..1
+
+        const candStage = extractStageNum(it.title);
+        if (targetStage !== null && candStage !== null) {
+            if (candStage === targetStage) score += 0.3;       // boost exact stage
+            else score -= 0.3;                                  // penalize mismatched stage
+        }
+
         if (score > bestScore) {
             bestScore = score;
             bestLink = it.title;
@@ -181,6 +194,14 @@ const STOPWORDS = new Set([
     "men", "elite", "highlights", "full", "race", "stage", "live",
     "official", "2023", "2024", "2025", "2026" // years get stripped anyway
 ]);
+
+function extractStageNum(s: string): number | null {
+    // handles "Stage 4", "stage4", "Stage 04", "Prologue" (→ 0 if you want)
+    const pro = /\bprologue\b/i.test(s) ? 0 : null;
+    const m = s.match(/\bstage\W*(\d{1,2})\b/i);
+    if (m) return parseInt(m[1], 10);
+    return pro;
+}
 
 function canonicalizeName(raw: string): string {
     // lowercase + strip accents

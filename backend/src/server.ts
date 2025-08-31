@@ -31,8 +31,9 @@ async function loadRacesFile(): Promise<any[]> {
     } catch {
         throw new Error("races.json is invalid JSON");
     }
-    const arr = Array.isArray(json?.races) ? json.races : [];
-    return arr;
+    const men   = Array.isArray(json?.races_men)   ? json.races_men   : [];
+    const women = Array.isArray(json?.races_women) ? json.races_women : [];
+    return men.concat(women);
 }
 
 function apiKeyGuard(req: express.Request, res: express.Response, next: express.NextFunction) {
