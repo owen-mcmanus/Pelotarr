@@ -44,18 +44,77 @@ const USER_AGENT   = process.env.USER_AGENT   ?? "Pelotarr/1.0 (+https://localho
 //     ];
 // }
 
+// function buildUrlCandidates(displayTitle: string): string[] {
+//     // 1) pull year & suffix
+//     const yearMatch = displayTitle.match(/\b(20\d{2})\b/);
+//     if (!yearMatch) return [];
+//     const year = yearMatch[1];
+//
+//     let suffixMatch = displayTitle.match(/\[(.+?)\]/);
+//     if(suffixMatch) suffixMatch[1] = suffixMatch[1].replace("–", "-")
+//     const suffix = (suffixMatch ? suffixMatch[1] : "FULL RACE").trim();
+//
+//     // 2) strip trailing [ ... ]
+//     const withoutBracket = displayTitle.replace(/\s*\[.+?\]\s*$/, "").trim();
+//
+//     // 3) remove a trailing year (only if it's literally at the end)
+//     const baseTitle = withoutBracket.replace(new RegExp(`\\s*${year}\\s*$`), "").trim();
+//
+//     // 4) detect trailing "– Stage N" (or Prologue)
+//     const stageMatch = baseTitle.match(/\s*[–-]\s*Stage\s+(Prologue|\d+)\s*$/i);
+//     const stageLabel = stageMatch ? ` – Stage ${stageMatch[1]}` : "";
+//
+//     // 5) series = base title without the stage label
+//     const seriesBase = stageMatch ? baseTitle.slice(0, stageMatch.index).trim() : baseTitle;
+//
+//     // Helper: does a string already end with the year?
+//     const endsWithYear = (s: string) => new RegExp(`(?:^|\\s)${year}$`).test(s.trim());
+//
+//     // Folders
+//     const folderWithStageHuman = `${baseTitle} ${year}`; // keep as-is (your original OK)
+//     const folderSeriesHuman = endsWithYear(seriesBase) ? seriesBase : `${seriesBase} ${year}`;
+//
+//     // Filenames
+//     const fileWithStageHuman = `${baseTitle} ${year} [${suffix}].mp4`; // original
+//     const seriesFileBase = endsWithYear(seriesBase) ? seriesBase : `${seriesBase} ${year}`;
+//     const fileSeriesWithStageHuman = `${seriesFileBase}${stageLabel} [${suffix}].mp4`;
+//
+//     // encoder: spaces -> '+', everything else percent-encoded (so '–' => %E2%80%93)
+//     const plusEnc = (s: string) => encodeURIComponent(s).replace(/%20/g, "+");
+//
+//     const yearBase = `https://video.tiz-cycling.io/file/Tiz-Cycling/${year}`;
+//
+//     return Array.from(
+//         new Set([
+//             // 1) /{year}/{folder-with-stage}/{file-with-stage}
+//             `${yearBase}/${plusEnc(folderWithStageHuman)}/${plusEnc(fileWithStageHuman)}`,
+//             // 2) /{year}/{file-with-stage}
+//             `${yearBase}/${plusEnc(fileWithStageHuman)}`,
+//             // 3) /{year}/{series-folder}/{series-file-with-stage}
+//             `${yearBase}/${plusEnc(folderSeriesHuman)}/${plusEnc(fileSeriesWithStageHuman)}`,
+//         ])
+//     );
+// }
+
 function buildUrlCandidates(displayTitle: string): string[] {
+    // 0) peel off a trailing "(ladies)" marker (case-insensitive), remember it for the filename
+    const ladiesMatch = displayTitle.match(/\s*\((ladies)\)\s*$/i);
+    const ladiesSuffixHuman = ladiesMatch ? " (ladies)" : "";
+    const titleNoLadies = ladiesMatch
+        ? displayTitle.slice(0, ladiesMatch.index).trim()
+        : displayTitle;
+
     // 1) pull year & suffix
-    const yearMatch = displayTitle.match(/\b(20\d{2})\b/);
+    const yearMatch = titleNoLadies.match(/\b(20\d{2})\b/);
     if (!yearMatch) return [];
     const year = yearMatch[1];
 
-    let suffixMatch = displayTitle.match(/\[(.+?)\]/);
-    if(suffixMatch) suffixMatch[1] = suffixMatch[1].replace("–", "-")
-    const suffix = (suffixMatch ? suffixMatch[1] : "FULL RACE").trim();
+    const suff = titleNoLadies.match(/\[(.+?)\]\s*$/);
+    if(suff) suff[1] = suff[1].replace("–", "-")
+    const suffix = (suff ? suff[1] : "FULL RACE").trim();
 
     // 2) strip trailing [ ... ]
-    const withoutBracket = displayTitle.replace(/\s*\[.+?\]\s*$/, "").trim();
+    const withoutBracket = titleNoLadies.replace(/\s*\[.+?\]\s*$/, "").trim();
 
     // 3) remove a trailing year (only if it's literally at the end)
     const baseTitle = withoutBracket.replace(new RegExp(`\\s*${year}\\s*$`), "").trim();
@@ -71,16 +130,20 @@ function buildUrlCandidates(displayTitle: string): string[] {
     const endsWithYear = (s: string) => new RegExp(`(?:^|\\s)${year}$`).test(s.trim());
 
     // Folders
-    const folderWithStageHuman = `${baseTitle} ${year}`; // keep as-is (your original OK)
+    const folderWithStageHuman = `${baseTitle} ${year}`;
     const folderSeriesHuman = endsWithYear(seriesBase) ? seriesBase : `${seriesBase} ${year}`;
 
     // Filenames
-    const fileWithStageHuman = `${baseTitle} ${year} [${suffix}].mp4`; // original
+    const fileWithStageHuman = `${baseTitle} ${year} [${suffix}]${ladiesSuffixHuman}.mp4`;
     const seriesFileBase = endsWithYear(seriesBase) ? seriesBase : `${seriesBase} ${year}`;
-    const fileSeriesWithStageHuman = `${seriesFileBase}${stageLabel} [${suffix}].mp4`;
+    const fileSeriesWithStageHuman = `${seriesFileBase}${stageLabel} [${suffix}]${ladiesSuffixHuman}.mp4`;
 
-    // encoder: spaces -> '+', everything else percent-encoded (so '–' => %E2%80%93)
-    const plusEnc = (s: string) => encodeURIComponent(s).replace(/%20/g, "+");
+    // Encoder: percent-encode, turn spaces into '+', but KEEP parentheses literal for "(ladies)"
+    const plusEnc = (s: string) =>
+        encodeURIComponent(s)
+            .replace(/%20/g, "+")
+            .replace(/%28/g, "(")
+            .replace(/%29/g, ")");
 
     const yearBase = `https://video.tiz-cycling.io/file/Tiz-Cycling/${year}`;
 
@@ -91,7 +154,7 @@ function buildUrlCandidates(displayTitle: string): string[] {
             // 2) /{year}/{file-with-stage}
             `${yearBase}/${plusEnc(fileWithStageHuman)}`,
             // 3) /{year}/{series-folder}/{series-file-with-stage}
-            `${yearBase}/${plusEnc(folderSeriesHuman)}/${plusEnc(fileSeriesWithStageHuman)}`,
+            `${yearBase}/${plusEnc(folderSeriesHuman)}/${plusEnc(fileSeriesWithStageHuman)}`
         ])
     );
 }
@@ -183,6 +246,19 @@ export async function HandleScan(): Promise<void> {
         console.log(result);
     } catch (e) {
         console.error("Stages cache update failed:", e);
+    }
+
+    try {
+        const result = await updateTizCache(CacheType.LADIES, { maxPages: 1});
+        console.log(result);
+    } catch (e) {
+        console.error("Ladies cache update failed:", e);
+    }
+    try {
+        const result = await updateTizCache(CacheType.CX, { maxPages: 1});
+        console.log(result);
+    } catch (e) {
+        console.error("CX cache update failed:", e);
     }
 
     console.log("Running Scan...");

@@ -21,6 +21,7 @@ type RaceFields = {
 
 const CLASSICS_CACHE_FILE = path.join(process.cwd(), "/public/tiz_classics_cache.json"); // adjust if needed
 const STAGE_CACHE_FILE = path.join(process.cwd(), "/public/tiz_stages_cache.json"); // adjust if needed
+const LADIES_CACHE_FILE = path.join(process.cwd(), "/public/tiz_ladies_cache.json"); // adjust if needed
 
 export function searchForRace(
     race: RaceFields,
@@ -39,8 +40,7 @@ export function searchForRace(
     const raceStartDate = toDate( race.start_date);
     const raceEndDate = toDate(race.end_date);
     if (!raceStartDate) return {title:"", content:""};
-
-    const cache = loadCacheSafe(race.type);
+    const cache = loadCacheSafe(race.level === "WWT" ? 3 : race.type);
     if (cache.length === 0) return {title:"", content:""};
 
     // 1) Filter by date window
@@ -120,8 +120,22 @@ export function searchForRace(
 
 function loadCacheSafe(type:number): CachedItem[] {
     try {
-        if (!fs.existsSync(type === 1 ? CLASSICS_CACHE_FILE : STAGE_CACHE_FILE)) return [];
-        const raw = fs.readFileSync(type === 1 ? CLASSICS_CACHE_FILE : STAGE_CACHE_FILE, "utf-8");
+        let fileName: string;
+        switch (type) {
+            case 2:
+                fileName = STAGE_CACHE_FILE;
+                break;
+            case 1:
+                fileName = CLASSICS_CACHE_FILE;
+                break;
+            case 3:
+                fileName = LADIES_CACHE_FILE;
+                break;
+            default:
+                throw new Error(`Unknown CacheType: ${type}`);
+        }
+        if (!fs.existsSync(fileName)) return [];
+        const raw = fs.readFileSync(fileName, "utf-8");
         const json = JSON.parse(raw);
         return Array.isArray(json) ? (json as CachedItem[]) : [];
     } catch {
