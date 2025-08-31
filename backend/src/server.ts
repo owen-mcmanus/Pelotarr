@@ -108,7 +108,7 @@ app.post("/monitor", apiKeyGuard, async (req, res) => {
         }else{
             if(id.split("::")[1]){
                 addRace(id, {
-                    name: race.name + " – Stage " + id.split("::")[1],
+                    name: race.name + " Stage " + id.split("::")[1],
                     type: Number(race.type),
                     level: String(race.level ?? ""),
                     start_date: start,
