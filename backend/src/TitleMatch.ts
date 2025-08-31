@@ -33,7 +33,7 @@ export function searchForRace(
     content: string;
 }{
     const dayWindow = opts?.dayWindow ?? 0;
-    let threshold = opts?.threshold ?? 0.60;
+    let threshold = opts?.threshold ?? 0.55;
 
     if (!race.name) return {title:"", content:""};
     const raceStartDate = toDate( race.start_date);
