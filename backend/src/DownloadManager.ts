@@ -237,17 +237,17 @@ export async function HandleScan(): Promise<void> {
             await fsp.copyFile(srcVideoPath, destVideoPath);
             await fsp.copyFile(nfoPath, destNfoPath);
 
-            await fsp.unlink(srcVideoPath);
-            await fsp.unlink(nfoPath);
-
             // Update DB AFTER success
-            const stats = await fsp.stat(srcVideoPath);
+            const stats = await fsp.stat(destVideoPath);
             await updateRace(race.id, {
                 acquired: true,
                 file_name: videoFile,
                 file_path: destVideoPath,
                 file_size_gb: Number((stats.size / (1024 ** 3)).toFixed(3))
             });
+
+            await fsp.unlink(srcVideoPath);
+            await fsp.unlink(nfoPath);
 
             console.log("Moved:", srcVideoPath, "→", destVideoPath);
             console.log("Moved:", nfoPath, "→", destNfoPath);

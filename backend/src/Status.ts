@@ -26,8 +26,8 @@ export async function checkServerStatus(): RaceStatus[] {
         if (race.acquired) {
             if(await fileExists(race.file_path)) {
                 out.push({id:race.id, status:"good"});
+                continue;
             }
-            continue;
         }
 
         if(await fileExists('/downloads/' + safeFilename(`${race.name} ${2025}.mp4.part`))){
