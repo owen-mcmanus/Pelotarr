@@ -6,7 +6,7 @@ import cors from "cors";
 
 import { addRace, removeRace, listRaces } from "./Database";
 import type { RaceFields } from "./Database";
-import { HandleScan } from "./DownloadManager";
+import {HandleScan, refreshAllLibraries} from "./DownloadManager";
 import { strToDate, isUuidV4 } from "./Utils";
 import {checkServerStatus, RaceStatus} from "./Status";
 
@@ -130,8 +130,6 @@ app.post("/monitor", apiKeyGuard, async (req, res) => {
             }
         }
 
-
-
         console.log("Added UUID:", id);
         scheduleScan(1000);
         res.json({ ok: true });
@@ -178,6 +176,31 @@ app.get("/status", async (req, res) => {
     } catch (err: any) {
         console.error("Error reading races:", err);
         res.status(500).json({ ok: false, error: err.message });
+    }
+});
+
+app.post("/rsssync", apiKeyGuard, async (req, res) => {
+    try {
+        scheduleScan(1000);
+        res.json({ ok: true });
+    } catch (err: any) {
+        console.error("Error with scan:", err);
+        res.status(500).json({ ok: false, error: err.message });
+    }
+});
+
+app.post("/jellysync", apiKeyGuard, async (req, res) => {
+    if (process.env.JELLYFIN_URL && process.env.JELLYFIN_API_KEY) {
+        try {
+            await refreshAllLibraries(process.env.JELLYFIN_URL, process.env.JELLYFIN_API_KEY);
+            res.json({ ok: true });
+        } catch (err: any) {
+            console.error("Jellyfin refresh failed:", err);
+            res.status(500).json({ ok: false, error: err.message });
+        }
+    }else{
+        console.error("Jellyfin env varibles not set.");
+        res.status(500).json({ ok: false, error: "Jellyfin env varibles not set." });
     }
 });
 

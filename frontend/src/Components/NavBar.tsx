@@ -13,6 +13,7 @@ export default function NavBar(){
         >
             <NavButton label={"Men"} icon={"/play.svg"} route={"/men"} />
             <NavButton label={"Women"} icon={"/play.svg"} route={"/women"} />
+            <NavButton label={"Cyclo-Cross"} icon={"/play.svg"} route={"/cx"} />
             <NavButton label={"Calendar"} icon={"/calendar.svg"} route={"/calendar"}/>
             <NavButton label={"Settings"} icon={"/settings.svg"} route={"/settings"}/>
 

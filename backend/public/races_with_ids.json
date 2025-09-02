@@ -925,7 +925,7 @@
     {
       "start": "17.01",
       "end": "19.01",
-      "name": "Santos Tour Down Under",
+      "name": "Santos Tour Down Under - Women",
       "type": 2,
       "level": "WWT",
       "country": "Australia",
@@ -1186,6 +1186,323 @@
       "level": "WWT",
       "country": "China",
       "id": "d100730f-1a45-4dc0-ad1e-15199cbab67d"
+    }
+  ],
+  "races_cx": [
+    {
+      "start": "23.11",
+      "end": null,
+      "name": "UCI World Cup Tabor",
+      "type": 1,
+      "level": "CDM",
+      "country": "Czech Republic",
+      "id": "55a2b00b-0636-412d-bb0f-b7091aa48280"
+    },
+    {
+      "start": "30.11",
+      "end": null,
+      "name": "UCI World Cup Flamanville",
+      "type": 1,
+      "level": "CDM",
+      "country": "France",
+      "id": "00b38ab6-b917-4209-8c52-da4797f67218"
+    },
+    {
+      "start": "07.12",
+      "end": null,
+      "name": "UCI World Cup Cabras",
+      "type": 1,
+      "level": "CDM",
+      "country": "Italy",
+      "id": "3cb3137a-14a7-4db2-8ddb-50cba6a6d6ec"
+    },
+    {
+      "start": "14.12",
+      "end": null,
+      "name": "UCI World Cup Namur",
+      "type": 1,
+      "level": "CDM",
+      "country": "Belgium",
+      "id": "4d310981-96e3-4865-b481-981df8d440cd"
+    },
+    {
+      "start": "20.12",
+      "end": null,
+      "name": "UCI World Cup Antwerpen",
+      "type": 1,
+      "level": "CDM",
+      "country": "Belgium",
+      "id": "a73113a4-6eae-4bc7-aa57-d9fda1fbef96"
+    },
+    {
+      "start": "21.12",
+      "end": null,
+      "name": "UCI World Cup Koksijde",
+      "type": 1,
+      "level": "CDM",
+      "country": "Belgium",
+      "id": "872dbfe6-5683-425e-9099-3494f57b36dd"
+    },
+    {
+      "start": "26.12",
+      "end": null,
+      "name": "UCI World Cup Gavere",
+      "type": 1,
+      "level": "CDM",
+      "country": "Belgium",
+      "id": "3f8ceef9-a9b3-4d06-998a-8e2a96dcd501"
+    },
+    {
+      "start": "28.12",
+      "end": null,
+      "name": "UCI World Cup Dendermonde",
+      "type": 1,
+      "level": "CDM",
+      "country": "Belgium",
+      "id": "fa1663f9-9f35-40e8-a6e4-460d7b1e13ff"
+    },
+    {
+      "start": "04.01",
+      "end": null,
+      "name": "UCI World Cup Zonhoven",
+      "type": 1,
+      "level": "CDM",
+      "country": "Belgium",
+      "id": "93f67500-ed2c-454a-8104-5fca473a9fa9"
+    },
+    {
+      "start": "18.01",
+      "end": null,
+      "name": "UCI World Cup Benidorm",
+      "type": 1,
+      "level": "CDM",
+      "country": "Spain",
+      "id": "4c0e937e-926c-4858-9b63-918cc0d8ecf5"
+    },
+    {
+      "start": "24.01",
+      "end": null,
+      "name": "UCI World Cup Maasmechelen",
+      "type": 1,
+      "level": "CDM",
+      "country": "Belgium",
+      "id": "862ba73f-358a-48b2-bbaa-74fa01dc3350"
+    },
+    {
+      "start": "25.01",
+      "end": null,
+      "name": "UCI World Cup Hoogerheide",
+      "type": 1,
+      "level": "CDM",
+      "country": "Netherlands",
+      "id": "69d2bfaf-5582-437e-bbe8-a9319c4bd890"
+    },
+    {
+      "start": "04.10",
+      "end": null,
+      "name": "Exact Cross Meulebeke - Berencross",
+      "type": 1,
+      "level": "C2",
+      "country": "Belgium",
+      "id": "8934e639-48af-48a3-be74-741735a3aaa7"
+    },
+    {
+      "start": "18.10",
+      "end": null,
+      "name": "Exact Cross Essen",
+      "type": 1,
+      "level": "C2",
+      "country": "Belgium",
+      "id": "ec952896-96bf-40ba-9d1d-592cf0afbc29"
+    },
+    {
+      "start": "25.10",
+      "end": null,
+      "name": "Exact Cross Heerderstrand",
+      "type": 1,
+      "level": "C2",
+      "country": "Netherlands",
+      "id": "cad1bf64-bafa-47c0-a3fe-9f4a9de6d7ba"
+    },
+    {
+      "start": "13.12",
+      "end": null,
+      "name": "Exact Cross Kortrijk - Urban Cross",
+      "type": 1,
+      "level": "C2",
+      "country": "Belgium",
+      "id": "6ec763d6-c6a2-425e-9540-248bc1d1b58b"
+    },
+    {
+      "start": "02.01",
+      "end": null,
+      "name": "Exact Cross Mol - Zilvermeercross",
+      "type": 1,
+      "level": "C2",
+      "country": "Belgium",
+      "id": "0f576695-fa3d-4378-87ca-4a3539485eb4"
+    },
+    {
+      "start": "04.02",
+      "end": null,
+      "name": "Exact Cross Maldegem - Parkcross",
+      "type": 1,
+      "level": "C2",
+      "country": "Belgium",
+      "id": "0427b3f8-2121-4cda-b773-2f6a8f956df7"
+    },
+    {
+      "start": "14.02",
+      "end": null,
+      "name": "Exact Cross Sint-Niklaas - Waaslandcross",
+      "type": 1,
+      "level": "C2",
+      "country": "Belgium",
+      "id": "4ea53f7b-48a5-4cb6-b086-344d0d7931b8"
+    },
+    {
+      "start": "19.10",
+      "end": null,
+      "name": "Superprestige Ruddervoorde",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "ca459535-a1df-4af4-80d7-05d2b6164b82"
+    },
+    {
+      "start": "26.10",
+      "end": null,
+      "name": "Superprestige Overijse - Vlaamse Druivencross",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "b342308b-9565-4b4a-92f3-b02b79c4162c"
+    },
+    {
+      "start": "11.11",
+      "end": null,
+      "name": "Superprestige Niel - Jaarmarktcross",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "31b7358c-7ce2-48f6-abfa-d05bc3a62339"
+    },
+    {
+      "start": "15.11",
+      "end": null,
+      "name": "Superprestige Merksplas",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "23af586d-4b48-4bae-93fc-15c95eaa77f7"
+    },
+    {
+      "start": "23.12",
+      "end": null,
+      "name": "Superprestige Heusden-Zolder",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "5f7502f0-4d82-4493-9014-eeea9f0d4e7d"
+    },
+    {
+      "start": "30.12",
+      "end": null,
+      "name": "Superprestige Diegem",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "faa538bd-cf13-4d98-a800-7a31e04d1ff7"
+    },
+    {
+      "start": "03.01",
+      "end": null,
+      "name": "Superprestige Gullegem",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "e36f59dd-5a91-4920-8ce8-b8d428a3edcf"
+    },
+    {
+      "start": "07.02",
+      "end": null,
+      "name": "Superprestige Middelkerke - Noordzeecross",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "92842bf1-afa6-40dd-987b-01a75f6dcfa2"
+    },
+    {
+      "start": "01.11",
+      "end": null,
+      "name": "X2O Trofee Oudenaarde - Koppenbergcross",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "f7e8e8a0-9adb-4952-a42f-094cb88f27e6"
+    },
+    {
+      "start": "02.11",
+      "end": null,
+      "name": "X2O Trofee Lokeren - Rapencross",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "516ae1f1-22e2-4ed4-9012-e5228c1abe39"
+    },
+    {
+      "start": "16.11",
+      "end": null,
+      "name": "X2O Trofee Hamme - Flandriencross",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "8eda473f-950b-4822-93a7-b9a22399015b"
+    },
+    {
+      "start": "22.12",
+      "end": null,
+      "name": "X2O Trofee Hofstade - Plage Cross",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "2f619296-e9e3-4a1d-a824-a0b5a801d1f4"
+    },
+    {
+      "start": "29.12",
+      "end": null,
+      "name": "X2O Trofee Loenhout - Azencross",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "13a6c945-ce6a-4f53-8dd6-c86b83821726"
+    },
+    {
+      "start": "01.01",
+      "end": null,
+      "name": "X2O Trofee Baal - GP Sven Nys",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "361c1069-0426-4c0a-a454-55e097328b94"
+    },
+    {
+      "start": "08.02",
+      "end": null,
+      "name": "X2O Trofee Lille - Krawatencross",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "74b57de2-e44f-463c-adbe-d4a5c7c0b03c"
+    },
+    {
+      "start": "15.02",
+      "end": null,
+      "name": "X2O Trofee Brussels - Brussels Universities Cyclocross",
+      "type": 1,
+      "level": "C1",
+      "country": "Belgium",
+      "id": "e034832c-a83b-4b2e-89c0-fcf7aa70bba4"
     }
   ]
 }

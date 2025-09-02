@@ -161,7 +161,6 @@ function buildUrlCandidates(displayTitle: string): string[] {
 
 export async function getDownloadURLFromName(name: string): Promise<string> {
     for (const u of buildUrlCandidates(name)) {
-        console.log(`Downloading ${u}`);
         if (await urlOk(u)) return u;
     }
     return "";
@@ -181,7 +180,7 @@ function buildEpisodeMetadata(race: RaceFields, videoPath: string, plot: string)
     });
 }
 
-async function refreshAllLibraries(baseUrl: string, apiKey: string) {
+export async function refreshAllLibraries(baseUrl: string, apiKey: string) {
     const res = await fetch(`${baseUrl}/Library/Refresh`, {
         method: "POST",
         headers: { "X-Emby-Token": apiKey }

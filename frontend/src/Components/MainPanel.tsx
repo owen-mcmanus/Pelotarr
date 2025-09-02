@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import MonitorCheckbox from "./Main/MonitorCheckbox.tsx";
 import TableRow from "./Main/TableRow.tsx";
 import type {Race, RaceStatus} from "../types.ts";
@@ -6,6 +7,8 @@ import type {Race, RaceStatus} from "../types.ts";
 export enum Category {
     MEN = "races_men",
     WOMEN = "races_women",
+    CX = "races_cx",
+    SEARCH = "races_search"
 };
 
 const YELLOW = "#FFCC00";
@@ -16,12 +19,15 @@ const startKey = (dm: string) => {
     return (m || 0) * 100 + (d || 0);
 };
 
-export function MainPanel({category}: {category: Category}) {
+export function MainPanel({category, raceStatus}: {category: Category, raceStatus:RaceStatus[]}) {
     const [data, setData] = useState<Race[] | null>(null);
     const [activeId, setActiveId] = useState<Set<string>>(new Set());
-    const [raceStatus, setRaceStatus] = useState<RaceStatus[]>([]);
+    // const [raceStatus, setRaceStatus] = useState<RaceStatus[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+
+    const { query } = useParams<{ query?: string }>();
+    const searchTerm = decodeURIComponent(query ?? "").trim();
 
     useEffect(() => {
         const ac = new AbortController();
@@ -33,7 +39,7 @@ export function MainPanel({category}: {category: Category}) {
 
                 const res = await fetch("/api/races.json", {
                     signal: ac.signal,
-                    headers: { Accept: "application/json" },
+                    headers: {Accept: "application/json"},
                 });
 
                 if (!res.ok) {
@@ -41,15 +47,50 @@ export function MainPanel({category}: {category: Category}) {
                     try {
                         const j = await res.json();
                         if (j?.error) msg = j.error;
-                    } catch {}
+                    } catch {
+                    }
                     throw new Error(msg);
                 }
 
-                const json = (await res.json())[category];
-                if (!Array.isArray(json)) throw new Error("Unexpected JSON shape");
-                const sorted = [...(json as Race[])].sort(
-                    (a, b) => startKey(a.start) - startKey(b.start)
-                );
+                // const json = (await res.json())[category];
+                // if (!Array.isArray(json)) throw new Error("Unexpected JSON shape");
+                // const sorted = [...(json as Race[])].sort(
+                //     (a, b) => startKey(a.start) - startKey(b.start)
+                // );
+                // setData(sorted);
+                const body = await res.json();
+
+                let arr: Race[];
+
+                if (category === Category.SEARCH) {
+                    const men = Array.isArray(body?.races_men) ? body.races_men : [];
+                    const women = Array.isArray(body?.races_women) ? body.races_women : [];
+                    const cx = Array.isArray(body?.races_cx) ? body.races_cx : [];
+
+                    // merge all three
+                    arr = men.concat(women, cx);
+
+                    // filter by search term (name/country/level/date fields)
+                    const q = (searchTerm ?? "").trim().toLowerCase();
+                    if (q) {
+                        arr = arr.filter((r) => {
+                            const hay = [
+                                r.name ?? "",
+                                r.country ?? "",
+                                r.level ?? "",
+                                r.start ?? "",
+                                r.end ?? ""
+                            ].join(" ").toLowerCase();
+                            return hay.includes(q);
+                        });
+                    }
+                } else {
+                    const json = body[category];
+                    if (!Array.isArray(json)) throw new Error("Unexpected JSON shape");
+                    arr = json as Race[];
+                }
+
+                const sorted = [...arr].sort((a, b) => startKey(a.start) - startKey(b.start));
                 setData(sorted);
             } catch (e: any) {
                 if (e?.name !== "AbortError") setError(e?.message ?? String(e));
@@ -60,7 +101,7 @@ export function MainPanel({category}: {category: Category}) {
 
         (async () => {
             try {
-                const res = await fetch("/api/monitor", { headers: { Accept: "application/json" } });
+                const res = await fetch("/api/monitor", {headers: {Accept: "application/json"}});
                 if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
                 const json = await res.json();
                 const ids = Array.isArray(json?.ids) ? json.ids : [];
@@ -70,31 +111,19 @@ export function MainPanel({category}: {category: Category}) {
             }
         })();
 
-        (async () => {
-            try {
-                const res = await fetch("/api/status", { headers: { Accept: "application/json" } });
-                if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-                const json = await res.json();
-                const status: RaceStatus[] = Array.isArray(json?.races) ? json.races : [];
-                setRaceStatus(status);
-                console.log(status);
-            } catch (e: any) {
-            } finally {
-            }
-        })();
-
         return () => ac.abort();
-    }, []);
+    }, [searchTerm, category]);
 
     return (
         <div
             style={{
                 backgroundColor: "#202020",
                 display: "flex",
-                alignItems: "center",
+                alignItems: "flex-start",
+                flex:1
             }}
         >
-            <div style={{ padding: 16, color: "#eaeaea", width: "100%", overflow: "auto" }}>
+            <div style={{ padding: "0px 0px", color: "#eaeaea", width: "100%", overflow: "auto" }}>
                 {loading && <div>Loading races…</div>}
                 {error && <div style={{ color: "#ff6b6b" }}>Failed to load: {error}</div>}
                 {!loading && !error && data && (

@@ -5,6 +5,7 @@ import { ChevronToggle } from "./ChevronToggle";
 import { StageRows } from "./StageRows";
 import { CHEVRON_SLOT } from "../../Utils/Constants";
 import { americanizeDate } from "../../Utils/Dates";
+import { countryToFlagEmojis } from "../../Utils/Flags.ts";
 import type {RaceStatus} from "../../types.ts";
 
 function determineIfActive(race:Race, activeList:string[]):boolean{
@@ -53,7 +54,8 @@ export default function TableRow({ race, activeList, raceStatus }: { race: Race;
                         : americanizeDate(race.start)}
                 </td>
                 <td style={{ padding: "8px 6px", color: [...activeList].filter(s => s.startsWith(`${race.id}`)).length > 0 ? "#FFCC00" : "" }}>{race.name}</td>
-                <td style={{ padding: "8px 6px" }}>{race.country}</td>
+                <td style={{ padding: "8px 6px" }}><span style={{ fontSize: 14, marginRight: 6 }}>{countryToFlagEmojis(race.country)}</span>
+                    {race.country}</td>
                 <td style={{ padding: "8px 6px" }}>{isStageRace ? "Stage Race" : "Classic"}</td>
                 <td style={{ padding: "8px 6px" }}>{race.level}</td>
             </tr>

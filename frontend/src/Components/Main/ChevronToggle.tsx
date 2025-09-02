@@ -7,7 +7,7 @@ type Props = {
     src?: string;
 };
 
-function ChevronToggleBase({ open, onClick, size = 12, src = "right-thin-chevron.svg" }: Props) {
+function ChevronToggleBase({ open, onClick, size = 12, src = "/right-thin-chevron.svg" }: Props) {
     return (
         <img
             src={src}
