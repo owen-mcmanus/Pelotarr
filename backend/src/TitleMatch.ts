@@ -34,7 +34,7 @@ export function searchForRace(
     content: string;
 }{
     const dayWindow = opts?.dayWindow ?? 0;
-    let threshold = opts?.threshold ?? 0.55;
+    let threshold = opts?.threshold ?? 0.60;
 
     if (!race.name) return {title:"", content:""};
     const raceStartDate = toDate( race.start_date);
@@ -99,7 +99,7 @@ export function searchForRace(
         const candStage = extractStageNum(it.title);
         if (targetStage !== null && candStage !== null) {
             if (candStage === targetStage) score += 0.3;       // boost exact stage
-            else score -= 0.3;                                  // penalize mismatched stage
+            else score = 0;                                  // penalize mismatched stage
         }
 
         if (score > bestScore) {
