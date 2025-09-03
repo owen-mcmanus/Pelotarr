@@ -233,32 +233,32 @@ export function sanitizeDirName(input: string, replacement = " "): string {
 // ---------- Main scan ----------
 export async function HandleScan(): Promise<void> {
     console.log("Updating Cache...");
-    // try {
-    //     const result = await updateTizCache(CacheType.CLASSICS, { maxPages: 1});
-    //     console.log(result);
-    // } catch (e) {
-    //     console.error("Classics cache update failed:", e);
-    // }
-    //
-    // try {
-    //     const result = await updateTizCache(CacheType.STAGES, { maxPages: 1});
-    //     console.log(result);
-    // } catch (e) {
-    //     console.error("Stages cache update failed:", e);
-    // }
-    //
-    // try {
-    //     const result = await updateTizCache(CacheType.LADIES, { maxPages: 1});
-    //     console.log(result);
-    // } catch (e) {
-    //     console.error("Ladies cache update failed:", e);
-    // }
-    // try {
-    //     const result = await updateTizCache(CacheType.CX, { maxPages: 1});
-    //     console.log(result);
-    // } catch (e) {
-    //     console.error("CX cache update failed:", e);
-    // }
+    try {
+        const result = await updateTizCache(CacheType.CLASSICS, { maxPages: 1});
+        console.log(result);
+    } catch (e) {
+        console.error("Classics cache update failed:", e);
+    }
+
+    try {
+        const result = await updateTizCache(CacheType.STAGES, { maxPages: 1});
+        console.log(result);
+    } catch (e) {
+        console.error("Stages cache update failed:", e);
+    }
+
+    try {
+        const result = await updateTizCache(CacheType.LADIES, { maxPages: 1});
+        console.log(result);
+    } catch (e) {
+        console.error("Ladies cache update failed:", e);
+    }
+    try {
+        const result = await updateTizCache(CacheType.CX, { maxPages: 1});
+        console.log(result);
+    } catch (e) {
+        console.error("CX cache update failed:", e);
+    }
 
     console.log("Running Scan...");
     const races: RaceFields[] = listRaces();
@@ -316,12 +316,12 @@ export async function HandleScan(): Promise<void> {
 
         try {
             // Download to /downloads
-            // await downloadFile(downloadUrl, srcVideoPath, {
-            //     overwrite: false,
-            //     timeoutMs: 120_000,
-            //     allowedDir: DOWNLOAD_DIR,
-            //     userAgent: USER_AGENT
-            // });
+            await downloadFile(downloadUrl, srcVideoPath, {
+                overwrite: false,
+                timeoutMs: 120_000,
+                allowedDir: DOWNLOAD_DIR,
+                userAgent: USER_AGENT
+            });
 
             // Write NFO next to the video (in downloads first)
             const { nfoPath } = await buildEpisodeMetadata(race, srcVideoPath, plot);
